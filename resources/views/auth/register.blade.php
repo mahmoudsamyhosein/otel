@@ -24,9 +24,10 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control @error ('name') is-invalid @enderror " id="name" type="text"  value="{{ old('name') }}" placeholder="{{__('radix.Enter your first name')}}" required autocomplete="name" />
-                                                        <label for="name">{{__('radix.First name')}}</label>
-                                                        @error('name')
+{{---------------------------------------------------- الاسم الاول والاخير --}}
+                                                        <input class="form-control @error ('first_name') is-invalid @enderror " id="first_name" type="text"  value="{{ old('first_name') }}" placeholder="{{__('radix.Enter your first name')}}" required autocomplete="first_name" />
+                                                        <label for="first_name">{{__('radix.First name')}}</label>
+                                                        @error('first_name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -35,15 +36,79 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control @error ('name') is-invaild @enderror " id="name" type="text" value="{{ old('name') }}" placeholder="{{__('radix.Enter your last name')}}"  required autocomplete="name"/>
-                                                        <label for="inputLastName">{{__('radix.Last name')}}</label>
-                                                        @error('name')
+                                                        <input class="form-control @error ('last_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('last_name') }}" placeholder="{{__('radix.Enter your last name')}}"  autocomplete="last_name"/>
+                                                        <label for="last_name">{{__('radix.Last name')}}</label>
+                                                        @error('last_name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                         @enderror
                                                     </div>
                                                 </div>
+{{--------------------------------------------- الهاتف والمدينة -----------------------------------------------------------------}}
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control @error ('phone') is-invalid @enderror " id="phone" type="text"  value="{{ old('phone') }}" placeholder="{{__('radix.phone')}}" required autocomplete="phone" />
+                                                        <label for="phone">{{__('radix.phone')}}</label>
+                                                        @error('phone')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control @error ('city') is-invaild @enderror " id="city" type="text" value="{{ old('city') }}" placeholder="{{__('radix.city')}}"  autocomplete="city"/>
+                                                        <label for="city">{{__('radix.city')}}</label>
+                                                        @error('city')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+{{---------------------------------------------  النهاية الهاتف والمدينة -----------------------------------------------------------------}}
+
+
+{{--------------------------------------------- الهاتف والمدينة -----------------------------------------------------------------}}
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control @error ('neighborhood') is-invalid @enderror " id="phone" type="text"  value="{{ old('neighborhood') }}" placeholder="{{__('radix.neighborhood')}}" required autocomplete="neighborhood" />
+                                                        <label for="neighborhood">{{__('radix.neighborhood')}}</label>
+                                                        @error('neighborhood')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control @error ('address') is-invaild @enderror " id="address" type="text" value="{{ old('address') }}" placeholder="{{__('radix.address')}}"  autocomplete="address"/>
+                                                        <label for="address">{{__('radix.address')}}</label>
+                                                        @error('address')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+{{---------------------------------------------  النهاية الهاتف والمدينة -----------------------------------------------------------------}}
+
+{{---------------------------------------------------- البريد الالكتروني واسم الفندق --}}
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control @error ('hotel_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('hotel_name') }}" placeholder="{{__('radix.hotel_name')}}"  autocomplete="hotel_name"/>
+                                                        <label for="hotel_name">{{__('radix.hotel_name')}}</label>
+                                                        @error('hotel_name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control @error ('email') is-invaild @enderror" id="email" type="email" value="{{ old('email') }}" placeholder="{{__('radix.name@example.com')}}" required autocomplete="email" />
@@ -54,6 +119,9 @@
                                                     </span>
                                                 @enderror
                                             </div>
+{{----------------------------------- النهاية البريد الالكتروني و أسم الفندق-------------------------------------------------------------------------}}
+                                                    
+{{---------------------------------------------------- كلمة المرور البداية --}}
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
@@ -78,6 +146,8 @@
                                                     </div>
                                                 </div>
                                             </div>
+{{---------------------------------------------------- كلمة المرور النهاية --}}
+
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button type ='submit' class="btn btn-primary btn-block" href="{{ route('register')}}">{{__('radix.Create Account')}}</button></div>
                                             </div>

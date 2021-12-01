@@ -50,9 +50,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' =>   ['required', 'string', 'max:255'],
+            'last_name' =>    ['required', 'string', 'max:255'],
+            'phone' =>        ['required','numeric','min:10'],
+            'city' =>         ['required', 'string', 'max:255'],
+            'neighborhood' => ['required', 'string', 'max:255'],
+            'address'=>       ['required','string'],
+            'email' =>        ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' =>     ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirm' => ['required' ,'same:password'],
         ]);
     }
 
@@ -65,9 +71,23 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'first_name' =>           $data['first_name'],
+            'last_name' =>            $data['last_name'],
+            'email' =>                $data['email'],
+            'phone' =>                $data['phone'],
+            'city'  =>                $data['city'],
+            'neighborhood' =>         $data['neighborhood'],
+            'address' =>              $data['address'],
+            'email' =>                $data['email'],
+            'password' => Hash::make( $data['password']),
+            'password_confirm' =>     $data['same:password'],
         ]);
+
+        if(!is_null($data)){
+            return back()->with('تم تسجيلك بنجاح علي النظام !','نجاح');
+        }
+        else{
+            return back()->with('!فشل','لم يتم تسجيلك علي النظام');
+        }
     }
 }
