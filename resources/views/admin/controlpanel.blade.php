@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>أوتيل | لادارة الفنادق</title>
-    @include('admin/theme.css')
+    @include('admin/theme/css')
 </head>
 <body id="page-top" dir="rtl">
 
@@ -46,7 +46,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-  @include('admin/theme.logout')
-  @include('admin/theme.js')
+  @include('admin/theme/logout')
+  @include('admin/theme/js')
 </body>
 </html>

@@ -11,7 +11,7 @@
 
     <title>SB Admin 2 - Tables</title>
 
-    @include('admin/theme.css')
+    @include('admin/theme/css')
 
 </head>
 
