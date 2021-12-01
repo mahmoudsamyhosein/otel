@@ -17,23 +17,23 @@
 		<link rel="icon" type="image/png" href="{{ asset ('radix/images/favicon.png') }}">
         <!-- Favicon -->	
         <!--css-->
-        @include('front-end-theme/radix.css')
+        @include('front-end-theme/radix/css')
         <!--css-->
     </head>
     <body class="antialiased" >
         <!--radix theme -->
-         @include('front-end-theme/radix.header')
-         @include('front-end-theme/radix.preload-get-pro')
-         @include('front-end-theme/radix.heroarea')
-         @include('front-end-theme/radix.aboutus')
-         @include('front-end-theme/radix.services')
-         @include('front-end-theme/radix.fun-facts')
-         @include('front-end-theme/radix.profilo')
-         @include('front-end-theme/radix.calltoaction')
-         @include('front-end-theme/radix.blog')
-         @include('front-end-theme/radix.partner')
-         @include('front-end-theme/radix.footer')
-         @include('front-end-theme/radix.js')
+         @include('front-end-theme/radix/header')
+         @include('front-end-theme/radix/preload-get-pro')
+         @include('front-end-theme/radix/heroarea')
+         @include('front-end-theme/radix/aboutus')
+         @include('front-end-theme/radix/services')
+         @include('front-end-theme/radix/fun-facts')
+         @include('front-end-theme/radix/profilo')
+         @include('front-end-theme/radix/calltoaction')
+         @include('front-end-theme/radix/blog')
+         @include('front-end-theme/radix/partner')
+         @include('front-end-theme/radix/footer')
+         @include('front-end-theme/radix/js')
         <!--radix theme -->
     </body>
 </html>
