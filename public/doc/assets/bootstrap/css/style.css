@@ -1,0 +1,45 @@
+/*الألوان المستخدمة في التصميم  */
+/*
+*#A4CD44 أخضر فاتح 
+*#75BB29 أخضر غامق
+*#FDD200 لون أصفر
+*#FFFFFF لون أبيض
+*#236199 لون أزرق
+*#BCBBB8 رمادي
+*#8B522E لون النخلة غامق
+*#BB8559 لون النخلة فاتح
+*/
+body{
+    padding-top: 50px;
+    height: 2000px;
+}
+.navbar{
+    
+}
+/* توسيط الشعار في المنتصف */
+.navbar-brand {
+    padding-top: 0%;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+}
+/* توسيط الشعار في المنتصف النهاية*/
+/* عنا البداية*/
+.about{
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+.about .lead {
+    color: #BCBBB8;
+    font-size: 25px;
+    margin-top: 25px;
+}
+.about h1 ,p ,span {
+    font-weight: bold;
+}
+.about h1 span{
+    color: aqua;
+}
+/* عنا النهاية*/

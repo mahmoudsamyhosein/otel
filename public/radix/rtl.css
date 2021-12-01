@@ -1,0 +1,96 @@
+
+/*
+*الألوان
+*007bff
+*17a2b8
+*
+*/
+/* .header .search-form .icon, .header .nav li .dropdown li:hover a, .header .nav li .dropdown.submenu li:hover a, .header .button .btn, .hero-area .button .btn, .hero-area .owl-controls .owl-dots .owl-dot span, .hero-area .owl-controls .owl-dots .owl-dot.active span, .fun-facts .icon, .services .single-service.slick-center, .services button:hover, .services.single .owl-controls .owl-dots .owl-dot span, .services.single .owl-controls .owl-dots .owl-dot.active span, .header .nav li a::before, .portfolio .portfolio-nav ul li.active, .portfolio .portfolio-nav ul li:hover, .portfolio .cbp-filter-counter, .portfolio .portfolio-hover .button a:hover, .header .link a span, .portfolio .portfolio-hover .button .primary, .hero-area .owl-controls .owl-nav div:hover, .consulting, .consulting .text-content .list li i, .consulting .nice-select .option:hover, .testimonials button:hover, .team .t-icon a, .team.single .contact li i, .why-choose .why-video .video a:hover i, .why-choose .why-video .video a, .team.single .skills .progress .progress-bar, .team.single .skills .progress .percent, .team.single .owl-nav div, .call-to-action::before, .blogs-main button:hover, .blogs-main.archives .pagination li.active a, .blogs-main.archives .single-sidebar h2 i, .blogs-main.archives .post-tab .nav li a.active, .blogs-main.archives.single .arrow li a, .blogs-main.archives.single .form-group .btn, .about-us .progress .progress-bar, .about-us .progress .percent, .radix-tabs .nav-main .nav-tabs li a.active, .radix-tabs .single-gallery a, .faqs-main .single-faq.active .faq-title a, .contact-us .form-main h2::before, .contact-us .nice-select .option:hover, .contact-us .social li a i, .error-page .search-form .btn, .footer .top-arrow .btn, .footer .single-widget.newsletter button, .radix-tabs .btn:hover, .single-table .btn:hover, .portfolio.single .owl-nav div:hover, .preloader-inner .single-loader, .btn.primary, .header .mobile-menu, .header .mobile-menu {
+    background: #007bff;
+} */
+
+.header .search-form .icon, .header .nav li .dropdown li:hover a, .header .nav li .dropdown.submenu li:hover a, .header .button .btn, .hero-area .button .btn, .hero-area .owl-controls .owl-dots .owl-dot span, .hero-area .owl-controls .owl-dots .owl-dot.active span, .fun-facts .icon, .services .single-service.slick-center, .services button:hover, .services.single .owl-controls .owl-dots .owl-dot span, .services.single .owl-controls .owl-dots .owl-dot.active span, .header .nav li a::before, .portfolio .portfolio-nav ul li.active, .portfolio .portfolio-nav ul li:hover, .portfolio .cbp-filter-counter, .portfolio .portfolio-hover .button a:hover, .header .link a span, .portfolio .portfolio-hover .button .primary, .hero-area .owl-controls .owl-nav div:hover, .consulting, .consulting .text-content .list li i, .consulting .nice-select .option:hover, .testimonials button:hover, .team .t-icon a, .team.single .contact li i, .why-choose .why-video .video a:hover i, .why-choose .why-video .video a, .team.single .skills .progress .progress-bar, .team.single .skills .progress .percent, .team.single .owl-nav div, .call-to-action::before, .blogs-main button:hover, .blogs-main.archives .pagination li.active a, .blogs-main.archives .single-sidebar h2 i, .blogs-main.archives .post-tab .nav li a.active, .blogs-main.archives.single .arrow li a, .blogs-main.archives.single .form-group .btn, .about-us .progress .progress-bar, .about-us .progress .percent, .radix-tabs .nav-main .nav-tabs li a.active, .radix-tabs .single-gallery a, .faqs-main .single-faq.active .faq-title a, .contact-us .form-main h2::before, .contact-us .nice-select .option:hover, .contact-us .social li a i, .error-page .search-form .btn, .footer .top-arrow .btn, .footer .single-widget.newsletter button, .radix-tabs .btn:hover, .single-table .btn:hover, .portfolio.single .owl-nav div:hover, .preloader-inner .single-loader, .btn.primary, .header .mobile-menu, .header .mobile-menu {
+    background: #17a2b8;
+}
+/* Twitter Widget */
+.footer .single-tweet {
+	padding-left: 30px;
+}
+.footer .single-tweet i {
+	left: 0;
+}
+
+/* الفاء عرض  السلايدر nav جهة اليسار */
+.hero-area .owl-controls .owl-nav {
+    display: none;
+}
+/* شريط التقدم اسفل قسم about us  */
+.progress-main{
+    display: none;
+}
+
+.call-to-action::after {
+
+    display: none;
+
+}
+.get-pro {
+    color:rgb(248, 252, 244);
+    background: #17a2b8;
+}
+
+.btn {
+    color: #fff;
+    margin-top: 5px;
+    background: #17a2b8;
+    
+}
+.btn{
+    margin-top: 5px;
+}
+
+.header .nav {
+    float: right;
+
+}
+
+
+.section-title h1, .breadcrumbs ul li + li::before {
+    color: #17a2b8;
+}
+.footer .copyright p a, .section-title h1, .breadcrumbs ul li + li::before {
+    color: #17a2b8;
+}
+.fa-twitter:before {
+    color: #17a2b8;
+}
+.footer .single-tweet i, .footer .single-tweet p i, .blogs-main.archives .single-sidebar ul li a:hover, .blogs-main .blog-inner h4:hover a, .team .t-social li a:hover, .breadcrumbs ul li:hover a, .breadcrumbs ul li.active a, .portfolio .portfolio-hover h4:hover a, .team .t-social li.active a, .footer .copyright p a, .section-title h1, .breadcrumbs ul li + li::before {
+    color: #17a2b8;
+}
+.hero-area .slider-text h1 span{
+    color: #17a2b8;
+}
+
+.hero-area .button .btn.video i{
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+.fun-facts .text-content h1 span{
+    color: #17a2b8;
+}
+.fa-map-marker:before ,.fa-headphones:before ,.footer .single-tweet p a ,.fa-long-arrow-right:before ,.fa-bolt:before ,.fa-eye:before ,.fa-calendar:before ,.fa-long-arrow-left:before ,.fa-long-arrow-left:before ,.fa-long-arrow-left:before ,.portfolio .portfolio-nav , .portfolio .cbp-filter-counter::before {
+    color: #17a2b8;
+    border-bottom-color: #007bff;
+    border-top-color: #007bff;
+
+}
+.services .single-service h2 a {
+    color: #17a2b8;
+}
+
+.fa-bullseye:before ,.fa-magic:before ,.fa-wordpress:before ,.fa-lightbulb-o:before ,.fa-cube:before ,.fa-bullhorn:before{
+    color: #17a2b8;
+}
+button, a, a:hover, a:focus, a:active {
+    color: #17a2b8;
+}

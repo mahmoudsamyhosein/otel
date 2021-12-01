@@ -1,0 +1,38 @@
+.navbar-nav {
+  padding-right: 0;
+}
+
+.sidebar .nav-item .nav-link[data-toggle=collapse]::after {
+  float: left;
+}
+
+.sidebar .nav-item .nav-link {
+
+    text-align: right;
+
+}
+
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem ;
+  left :0;
+}
+
+
+.sidebar .sidebar-heading {
+  text-align: center;
+  padding: 0 1rem;
+  font-weight: 800;
+  font-size: .65rem;
+}
+
+/* لون لوحة التحكم
+*background-image: linear-gradient(
+180deg,#0099ff6b 0%,rgb(120, 167, 35) 100%);
+*
+*/
+.bg-gradient-primary {
+  background-color: #ffffff;
+  
+  background-size: cover;
+}
