@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{ asset ('doc/assets/css/documenter_style.css') }}" media="all">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="{{ asset ('doc/assets/bootstrap/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset ('doc/style.css') }}">
+	<link rel="stylesheet" href="{{ asset ('doc/style/css') }}">
 </head>
 <body class="documenter-project-mp-price" dir="rtl"  >
 	<div  id="documenter_sidebar" >
