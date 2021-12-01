@@ -48,7 +48,7 @@ return array(
     'First name' => '',
     'Last name' => '',
     'Email address' => '',
-    'Password' => '',
+    'Password' => 'كلمة المرور',
     'Confirm Password' => '',
     'Create Account' => 'أنشاء حساب',
     'Have an account? Go to login' => 'لديك حساب ؟ سجل دخول ',

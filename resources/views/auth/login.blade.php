@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
 
@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="password" id="password"  class="form-control  @error('password') is-invaild @enderror " value="{{ old ('password')}}" required autocomplete="password" autofocus
-                                                id="Password" placeholder="Password">
+                                                id="Password" placeholder="{{ __('radix.Password') }}">
                                             @error('password')
                                                 <span class="invaild-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'address' =>              $data['address'],
             'email' =>                $data['email'],
             'password' => Hash::make( $data['password']),
-            'password_confirm' =>     $data['same:password'],
+            'password_confirm' =>     $data['password'],
         ]);
 
         if(!is_null($data)){

@@ -19,13 +19,13 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">{{__('radix.Create Account') }}</h3></div>
                                     <div class="card-body">
-                                        <form method="POST" action="{{ route('register')}}">
+                                    <form method="POST" action="{{ route('register')}}">
                                          @csrf
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
 {{---------------------------------------------------- الاسم الاول والاخير --}}
-                                                        <input class="form-control @error ('first_name') is-invalid @enderror " id="first_name" type="text"  value="{{ old('first_name') }}" placeholder="{{__('radix.Enter your first name')}}" required autocomplete="first_name" />
+                                                        <input name="first_name" class="form-control @error ('first_name') is-invalid @enderror " id="first_name" type="text"  value="{{ old('first_name') }}" placeholder="{{__('radix.Enter your first name')}}" required  />
                                                         <label for="first_name">{{__('radix.First name')}}</label>
                                                         @error('first_name')
                                                         <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control @error ('last_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('last_name') }}" placeholder="{{__('radix.Enter your last name')}}"  autocomplete="last_name"/>
+                                                        <input name='last_name' class="form-control @error ('last_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('last_name') }}" placeholder="{{__('radix.Enter your last name')}}"  required />
                                                         <label for="last_name">{{__('radix.Last name')}}</label>
                                                         @error('last_name')
                                                         <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
 {{--------------------------------------------- الهاتف والمدينة -----------------------------------------------------------------}}
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control @error ('phone') is-invalid @enderror " id="phone" type="text"  value="{{ old('phone') }}" placeholder="{{__('radix.phone')}}" required autocomplete="phone" />
+                                                        <input name='phone' class="form-control @error ('phone') is-invalid @enderror " id="phone" type="text"  value="{{ old('phone') }}" placeholder="{{__('radix.phone')}}" required  />
                                                         <label for="phone">{{__('radix.phone')}}</label>
                                                         @error('phone')
                                                         <span class="invalid-feedback" role="alert">
@@ -59,7 +59,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control @error ('city') is-invaild @enderror " id="city" type="text" value="{{ old('city') }}" placeholder="{{__('radix.city')}}"  autocomplete="city"/>
+                                                        <input  name='city' class="form-control @error ('city') is-invaild @enderror " id="city" type="text" value="{{ old('city') }}" placeholder="{{__('radix.city')}}" required/>
                                                         <label for="city">{{__('radix.city')}}</label>
                                                         @error('city')
                                                         <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
 {{--------------------------------------------- الهاتف والمدينة -----------------------------------------------------------------}}
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control @error ('neighborhood') is-invalid @enderror " id="phone" type="text"  value="{{ old('neighborhood') }}" placeholder="{{__('radix.neighborhood')}}" required autocomplete="neighborhood" />
+                                                        <input name='neighborhood' class="form-control @error ('neighborhood') is-invalid @enderror " id="phone" type="text"  value="{{ old('neighborhood') }}" placeholder="{{__('radix.neighborhood')}}" required  />
                                                         <label for="neighborhood">{{__('radix.neighborhood')}}</label>
                                                         @error('neighborhood')
                                                         <span class="invalid-feedback" role="alert">
@@ -85,7 +85,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control @error ('address') is-invaild @enderror " id="address" type="text" value="{{ old('address') }}" placeholder="{{__('radix.address')}}"  autocomplete="address"/>
+                                                        <input  name= 'address' class="form-control @error ('address') is-invaild @enderror " id="address" type="text" value="{{ old('address') }}" placeholder="{{__('radix.city')}}" required />
                                                         <label for="address">{{__('radix.address')}}</label>
                                                         @error('address')
                                                         <span class="invalid-feedback" role="alert">
@@ -99,7 +99,7 @@
 {{---------------------------------------------------- البريد الالكتروني واسم الفندق --}}
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control @error ('hotel_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('hotel_name') }}" placeholder="{{__('radix.hotel_name')}}"  autocomplete="hotel_name"/>
+                                                        <input name='hotel_name' class="form-control @error ('hotel_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('hotel_name') }}" placeholder="{{__('radix.hotel_name')}}"  required/>
                                                         <label for="hotel_name">{{__('radix.hotel_name')}}</label>
                                                         @error('hotel_name')
                                                         <span class="invalid-feedback" role="alert">
@@ -111,7 +111,7 @@
 
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control @error ('email') is-invaild @enderror" id="email" type="email" value="{{ old('email') }}" placeholder="{{__('radix.name@example.com')}}" required autocomplete="email" />
+                                                <input name='email' class="form-control @error ('email') is-invaild @enderror" id="email" type="email" value="{{ old('email') }}" placeholder="{{__('radix.name@example.com')}}" required  />
                                                 <label for="email">{{__('radix.Email address')}}</label>
                                                 @error('email')
                                                     <span class="invalid-feedback" role="alert">
@@ -125,7 +125,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control @error ('password') is-invaild @enderror" id="password" type="password" placeholder="{{__('radix.Create a password')}}" required autocomplete="password"/>
+                                                        <input name="password" class="form-control @error ('password') is-invaild @enderror" id="password" type="password" placeholder="{{__('radix.Create a password')}}" required />
                                                         <label for="password">{{__('radix.Password')}}</label>
                                                         @error('password')
                                                         <span class="invalid-feedback" role="alert">
@@ -136,7 +136,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control @error ('password') is-invaild @enderror" id="password" type="password" placeholder="{{__('radix.Confirm password')}}" required autocomplete="password"/>
+                                                        <input name='password' class="form-control @error ('password') is-invaild @enderror" id="password" type="password" placeholder="{{__('radix.Confirm password')}}" required />
                                                         <label for="password">{{__('radix.Confirm Password')}}</label>
                                                         @error('password')
                                                         <span class="invalid-feedback" role="alert">
@@ -151,7 +151,7 @@
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button type ='submit' class="btn btn-primary btn-block" href="{{ route('register')}}">{{__('radix.Create Account')}}</button></div>
                                             </div>
-                                        </form>
+                                    </form>
                                     </div>
                                     @if(route::has('login'))
                                         <div class="card-footer text-center py-3">
