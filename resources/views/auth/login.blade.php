@@ -11,7 +11,7 @@
 
     <title>أوتيل لأدارة الفنادق | تسجيل الدخول</title>
 
-    @include('admin/theme.css')
+    @include('admin/theme/css')
 
 </head>
 
@@ -102,7 +102,7 @@
 
     </div>
 
-    @include('admin/theme.js')
+    @include('admin/theme/js')
 
 </body>
 
