@@ -11,6 +11,8 @@
                     <div class="logo">
                         <a href="#"><img src="{{ asset ('radix/images/logo.png') }}" alt="logo"></a>
                     </div>
+                    
+                  
                     <div class="link"><a href="#"><span>أ</span>وتيل</a></div>
                     <!--/ End Logo -->
                     <button class="mobile-arrow"><i class="fa fa-bars"></i></button>

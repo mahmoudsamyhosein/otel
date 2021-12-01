@@ -1,5 +1,5 @@
  <!-- Call To Action -->
- <section class="call-to-action section" data-stellar-background-ratio="0.5"  >
+ <section class="call-to-action section" data-stellar-background-ratio="0.5" dir="rtl" >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12 wow fadeInUp">
