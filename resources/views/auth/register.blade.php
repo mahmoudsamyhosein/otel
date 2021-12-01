@@ -7,7 +7,7 @@
         <meta name="description" content="أوتيل لأدارة الفنادق | تسجيل" />
         <meta name="author" content="أوتيل لأدارة الفنادق | تسجيل" />
         <title>أوتيل لأدارة الفنادق | تسجيل</title>
-        @include('admin/theme.css')
+        @include('admin/theme/css')
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -109,6 +109,6 @@
                 </footer>
             </div>
         </div>
-        @include('admin/theme.js')
+        @include('admin/theme/js')
     </body>
 </html>
