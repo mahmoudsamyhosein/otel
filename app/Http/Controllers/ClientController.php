@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guest;
 use Illuminate\Http\Request;
-use App\Models\Client;
-
+use Yajra\DataTables\Facades\DataTables;
 
 class ClientController extends Controller
 {
@@ -46,11 +46,22 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
-        $table_of_clients =   Client::all();
-        
-        return view('admin/clients/show',compact($table_of_clients));
+        if ($request->ajax()) {
+            $data = Guest::all();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row) {
+                           $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">عرض</a>';
+                           
+                           return $action_btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('admin/clients/show');
     }
 
     /**

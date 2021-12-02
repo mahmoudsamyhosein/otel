@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>   أوتيل  لادارة الفنادق | العملاء </title>
 
-    @include('admin/theme.css')
+    @include('admin/theme/css')
 
 </head>
 
@@ -47,9 +47,10 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered"  name='guestsTable' id="guestsTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>الاسم</th>
                                 <th>نوع الاثبات	</th>
                                 <th>رقم الأثبات	</th>
@@ -62,6 +63,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>#</th>
                                 <th>الاسم</th>
                                 <th>نوع الاثبات	</th>
                                 <th>رقم الأثبات	</th>
@@ -74,18 +76,7 @@
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>{{ $table_of_clients }}</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                                <th><ul>
-                                    <li><i class="fas fa-fw fa-table"></i>
-                                    <li><i class="fas fa-fw fa-table"></i>
-                                    <li><i class="fas fa-fw fa-table"></i>
-                                    </ul>
-                                </th>
+                                
                             </tr>
                             
                              
@@ -120,7 +111,27 @@
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>
 </a>
-@include('admin/theme.js')
+@include('admin/theme/js')
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var table = $('#guestsTable').DataTable({
+            // processing: true,
+            serverSide: true,
+            ajax: "{{ route('clients') }}",
+            columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'name', name: 'name'},
+                {data: 'approve_type', name: 'approve_type'},
+                {data: 'approve_number', name: 'approve_number'},
+                {data: 'place_of_issue', name: 'place_of_issue'},
+                {data: 'phone', name: 'phone'},
+                {data: 'email', name: 'email'},
+                {data: 'action', name: 'action'}
+            ]
+        });
+    });
+  </script>
 </body>
 
 </html>

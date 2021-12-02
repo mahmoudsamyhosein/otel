@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -50,15 +51,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'first_name' =>   ['required', 'string', 'max:255'],
-            'last_name' =>    ['required', 'string', 'max:255'],
-            'phone' =>        ['required','numeric','min:10'],
-            'city' =>         ['required', 'string', 'max:255'],
-            'neighborhood' => ['required', 'string', 'max:255'],
-            'address'=>       ['required','string'],
-            'email' =>        ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' =>     ['required', 'string', 'min:8', 'confirmed'],
-            'password_confirm' => ['required' ,'same:password'],
+            
         ]);
     }
 
@@ -83,11 +76,35 @@ class RegisterController extends Controller
             'password_confirm' =>     $data['password'],
         ]);
 
-        if(!is_null($data)){
-            return back()->with('تم تسجيلك بنجاح علي النظام !','نجاح');
+    }
+
+
+    public function store(request $request){
+
+        $dataArray      =       array(
+            
+            "first_name"          =>          $request->first_name,
+            "last_name"          =>           $request->last_name,
+            "email"          =>               $request->email,
+            "phone"         =>                $request->phone,
+            "city"         =>                 $request->city,
+            "email"         =>                $request->email,
+            "address"       =>                $request->address,
+            "password"      =>                $request->password,
+            "password_confirm"      =>        $request->password_confirm,
+        );
+
+        $user           =       User::create($dataArray);
+
+
+        if(!is_null($user)) {
+            return back()->with("success", "Success! Registration completed");
         }
-        else{
-            return back()->with('!فشل','لم يتم تسجيلك علي النظام');
+
+        else {
+            return back()->with("failed", "Alert! Failed to register");
         }
+
+        
     }
 }

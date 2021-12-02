@@ -14,7 +14,13 @@ class CreateGuestsTable extends Migration
     public function up()
     {
         Schema::create('guests', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('approve_type');
+            $table->integer('approve_number');
+            $table->string('place_of_issue');
+            $table->integer('phone')->unique();
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

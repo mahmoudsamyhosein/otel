@@ -32,7 +32,3 @@ ____________________________________control_panel_______________________________
 Route::get('admin/controlpanel', [App\Http\Controllers\ControlPanel_Controller::class, 'show'])->name('controlpanel');
 Route::get('admin/doc_mshm', [App\Http\Controllers\docController::class, 'index'])->name('doc_mshm');
 Route::get('admin/clients/show', [App\Http\Controllers\ClientController::class, 'show'])->name('clients');
-Route::get('admin/recivation', [App\Http\Controllers\Recivation_Controller::class, 'show'])->name('recivation');
-
-
-

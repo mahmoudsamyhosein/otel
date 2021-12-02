@@ -50,7 +50,7 @@
                        
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('recivation')}}">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الحجوزات</span></a>
             </li>
