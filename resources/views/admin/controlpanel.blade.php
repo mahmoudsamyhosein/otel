@@ -10,7 +10,7 @@
     @include('admin/theme/css')
 </head>
 <body id="page-top" dir="rtl">
-
+    @auth
     <!-- Page Wrapper -->
     <div id="wrapper">
         @include('admin/theme.sidebar')
@@ -48,5 +48,6 @@
     </a>
   @include('admin/theme/logout')
   @include('admin/theme/js')
+  @endauth
 </body>
 </html>

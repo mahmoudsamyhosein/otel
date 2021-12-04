@@ -15,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route ('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>لوحة التحكم</span></a>
             </li>
@@ -50,7 +50,7 @@
                        
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="{{ route('bookings')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الحجوزات</span></a>
             </li>
@@ -116,7 +116,7 @@
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
-                <a class="nav-link" href="{{ route('doc_mshm')}}">
+                <a class="nav-link" href="{{ route('sms')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الرسائل</span></a>
             </li>

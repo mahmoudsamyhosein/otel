@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>   أوتيل  لادارة الفنادق | العملاء </title>
 
     @include('admin/theme/css')
@@ -27,9 +26,16 @@
 
             <!-- Main Content -->
             <div id="content">
+
+                
                 @include('admin/theme.topbar')
+
                 <!-- Begin Page Content -->
-                <div class="container-fluid">  
+                <div class="container-fluid">
+
+                    
+
+                   
             </div>
             <!-- End of Main Content -->
     <!-- Begin Page Content -->
@@ -65,15 +71,16 @@
                                 <th>جوال</th>
                                 <th>البريد الالكتروني</th>
                                 <th>العمليات</th>
-                                {{-- <form class="d-inline-block" method="POST" action="{{ route('client_destroy') }}">
-                                    @method('delete')
-                                    @csrf
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('هل أنت متأكد؟')"><i class="fa fa-trash"></i> حذف</button> 
-                            </form> --}}
                                 
                             </tr>
                         </tfoot>
-                     
+                        <tbody>
+                            <tr>
+                                
+                            </tr>
+                            
+                             
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -109,24 +116,34 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var table = $('#guestsTable').DataTable({
-            processing: true,
+            //processing: true,
             serverSide: true,
-            ajax: "{{ route('clients') }}",
+            ajax: "{{ route('edit_clients') }}",
             columns: [
-                {data: 'DT_RowIndex',             name: 'DT_RowIndex'},
+                {data: 'DT_RowIndex',           name: 'DT_RowIndex'},
                 
-                {data: 'name',                    name: 'name'},
-                {data: 'approve_type',            name: 'approve_type'},
-                {data: 'approve_number',          name: 'approve_number'},
-                {data: 'place_of_issue',          name: 'place_of_issue'},
-                {data: 'phone',                   name: 'phone'},
-                {data: 'email',                   name: 'email'},
+                {data: 'name',                  name: 'name'},
+                {data: 'guest_type',            name: 'guest_type'},
+                {data: 'approve_type',          name: 'approve_type'},
+                {data: 'place_of_issue',        name: 'place_of_issue'},
+                {data: 'date_of_birth',         name: 'date_of_birth'},
+                {data: 'email',                 name: 'email'},
+                {data: 'phone_of_work',         name: 'phone_of_work'},
+                {data: 'category',              name: 'category'},
+                {data: 'nationalty',            name: 'nationalty'},
+                {data: 'id_copy',               name: 'id_copy'},
+                {data: 'date_of_expiry',        name: 'date_of_expiry'},
+                {data: 'kind',                  name: 'kind'},
+                {data: 'phone',                 name: 'phone'},
+                {data: 'place_of_work',         name: 'place_of_work'},
+                {data: 'address',               name: 'address'},
+                {data: 'note',                  name: 'note'},
+                {data: 'notes_2',               name: 'notes_2'},
 
 
-                {data: 'action',                  name: 'action'}
-                
+
+                {data: 'action',                name: 'action'}
             ]
-            
         });
     });
   </script>

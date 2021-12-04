@@ -26,7 +26,7 @@
                                                     <div class="form-floating mb-3 mb-md-0">
 {{---------------------------------------------------- الاسم الاول والاخير --}}
                                                         <input name="first_name" class="form-control @error ('first_name') is-invalid @enderror " id="first_name" type="text"  value="{{ old('first_name') }}" placeholder="{{__('radix.Enter your first name')}}" required  />
-                                                        <label for="first_name">{{__('radix.First name')}}</label>
+                                                        {{-- <label for="first_name">{{__('radix.First name')}}</label> --}}
                                                         @error('first_name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
                                                         <input name='last_name' class="form-control @error ('last_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('last_name') }}" placeholder="{{__('radix.Enter your last name')}}"  required />
-                                                        <label for="last_name">{{__('radix.Last name')}}</label>
+                                                        {{-- <label for="last_name">{{__('radix.Last name')}}</label> --}}
                                                         @error('last_name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -45,11 +45,12 @@
                                                         @enderror
                                                     </div>
                                                 </div>
+                                                
 {{--------------------------------------------- الهاتف والمدينة -----------------------------------------------------------------}}
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input name='phone' class="form-control @error ('phone') is-invalid @enderror " id="phone" type="text"  value="{{ old('phone') }}" placeholder="{{__('radix.phone')}}" required  />
-                                                        <label for="phone">{{__('radix.phone')}}</label>
+                                                        {{-- <label for="phone">{{__('radix.phone')}}</label> --}}
                                                         @error('phone')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -60,7 +61,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
                                                         <input  name='city' class="form-control @error ('city') is-invaild @enderror " id="city" type="text" value="{{ old('city') }}" placeholder="{{__('radix.city')}}" required/>
-                                                        <label for="city">{{__('radix.city')}}</label>
+                                                        {{-- <label for="city">{{__('radix.city')}}</label> --}}
                                                         @error('city')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -74,8 +75,8 @@
 {{--------------------------------------------- الهاتف والمدينة -----------------------------------------------------------------}}
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input name='neighborhood' class="form-control @error ('neighborhood') is-invalid @enderror " id="phone" type="text"  value="{{ old('neighborhood') }}" placeholder="{{__('radix.neighborhood')}}" required  />
-                                                        <label for="neighborhood">{{__('radix.neighborhood')}}</label>
+                                                        <input name='neighborhood' class="form-control @error ('neighborhood') is-invalid @enderror " id="neighborhood" type="text"  value="{{ old('neighborhood') }}" placeholder="{{__('radix.neighborhood')}}" required  />
+                                                        {{-- <label for="neighborhood">{{__('radix.neighborhood')}}</label> --}}
                                                         @error('neighborhood')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -85,8 +86,8 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input  name= 'address' class="form-control @error ('address') is-invaild @enderror " id="address" type="text" value="{{ old('address') }}" placeholder="{{__('radix.city')}}" required />
-                                                        <label for="address">{{__('radix.address')}}</label>
+                                                        <input  name= 'address' class="form-control @error ('address') is-invaild @enderror " id="address" type="text" value="{{ old('address') }}" placeholder="{{__('radix.address')}}" required />
+                                                        {{-- <label for="address">{{__('radix.address')}}</label> --}}
                                                         @error('address')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -100,7 +101,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
                                                         <input name='hotel_name' class="form-control @error ('hotel_name') is-invaild @enderror " id="last_name" type="text" value="{{ old('hotel_name') }}" placeholder="{{__('radix.hotel_name')}}"  required/>
-                                                        <label for="hotel_name">{{__('radix.hotel_name')}}</label>
+                                                        {{-- <label for="hotel_name">{{__('radix.hotel_name')}}</label> --}}
                                                         @error('hotel_name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -112,7 +113,7 @@
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input name='email' class="form-control @error ('email') is-invaild @enderror" id="email" type="email" value="{{ old('email') }}" placeholder="{{__('radix.name@example.com')}}" required  />
-                                                <label for="email">{{__('radix.Email address')}}</label>
+                                                {{-- <label for="email">{{__('radix.Email address')}}</label> --}}
                                                 @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -126,7 +127,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input name="password" class="form-control @error ('password') is-invaild @enderror" id="password" type="password" placeholder="{{__('radix.Create a password')}}" required />
-                                                        <label for="password">{{__('radix.Password')}}</label>
+                                                        {{-- <label for="password">{{__('radix.Password')}}</label> --}}
                                                         @error('password')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -137,7 +138,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input name='password' class="form-control @error ('password') is-invaild @enderror" id="password" type="password" placeholder="{{__('radix.Confirm password')}}" required />
-                                                        <label for="password">{{__('radix.Confirm Password')}}</label>
+                                                        {{-- <label for="password">{{__('radix.Confirm Password')}}</label> --}}
                                                         @error('password')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>

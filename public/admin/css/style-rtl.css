@@ -39,3 +39,15 @@
 .custom-control{
   margin-left: 200px;
 }
+/* الرسائل */
+
+.card-body {
+  padding-top: 1000px;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}

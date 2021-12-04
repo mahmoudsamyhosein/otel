@@ -9,6 +9,7 @@ use Yajra\DataTables\Facades\DataTables;
 class ClientController extends Controller
 {
     
+    
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +25,22 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Guest::all();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row) {
+                        $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
+                           
+                           return $action_btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('admin/clients/edit');
     }
 
     /**
@@ -53,7 +67,25 @@ class ClientController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row) {
-                           $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">عرض</a>';
+                        $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
+                           
+                           return $action_btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);         
+        }
+           
+        return view('admin/clients/show');
+    }
+
+    public function view(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Guest::all();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row) {
+                           $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
                            
                            return $action_btn;
                     })
@@ -61,7 +93,7 @@ class ClientController extends Controller
                     ->make(true);
         }
 
-        return view('admin/clients/show');
+        return view('admin/clients/view');
     }
 
     /**
@@ -95,6 +127,14 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $guest = Guest::where('id','$id')->first();
+        // if($guest){
+        //     return $guest->delete();
+        // }
+
+        // session()->flash('flash_massage','تم حذف العميل بنجاح');
+
+        // return(redirect(route('client_destroy'),compact($guest)));
+
     }
 }

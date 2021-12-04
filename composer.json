@@ -14,6 +14,9 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "rachidlaasri/laravel-installer": "^4.1",
+        "yajra/laravel-datatables-buttons": "^4.13",
+        "yajra/laravel-datatables-editor": "^1.25",
+        "yajra/laravel-datatables-html": "^4.41",
         "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
