@@ -70,11 +70,11 @@
                                             </button>
                                         </div>
                                         
-                                        <a href="#" class="btn btn-google btn-user btn-block">
+                                        <a href="{{ route('auth/google') }}" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i>
                                             {{__('radix.Login with Google')}} 
                                         </a>
-                                        <a href="#" class="btn btn-facebook btn-user btn-block">
+                                        <a href="{{ route('auth/facebook') }}" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> 
                                             {{__('radix.Login with Facebook')}}
                                         </a>

@@ -25,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('neighborhood')->nullable();
             $table->string('address')->nullable();
             $table->string('password');
-            
+            $table->string('google_id')->nullable();
+            $table->string('fb_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

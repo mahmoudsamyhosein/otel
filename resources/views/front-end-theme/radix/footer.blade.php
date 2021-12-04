@@ -61,10 +61,11 @@
                             <div class="single-widget newsletter text-right">
                                 <h2>{{ __('radix.Newsletter') }} </h2>
                                 <p>أشترك في القائمة البريدية لتصلك أحدث العروض وخصم حصري علي الأشتراكات</p>
-                                <form>
-                                    <input placeholder="{{__('radix.Your_Name') }}" type="text">
-                                    <input placeholder="{{__('radix.your_email') }}" type="email">
-                                    <button type="submit" class="button primary ">{{ __('radix.Subscribe_Now!')}}</button>
+                                <form action="{{route('Subscribe')}}" method="POST">
+                                  @csrf
+                                    <input placeholder="{{__('radix.Your_Name') }}" type="text" name="name">
+                                    <input placeholder="{{__('radix.your_email') }}" type="email" name="email">
+                                    <button type="submit" class="button primary">{{ __('radix.Subscribe_Now!')}}</button>
                                 </form>	
                             </div>
                             <!--/ End Newsletter Widget -->

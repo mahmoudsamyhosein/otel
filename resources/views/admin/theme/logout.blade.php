@@ -14,7 +14,7 @@ aria-hidden="true">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">الغاء</button>
             <form action="{{ route('logout')}}"  method="POST">
                 @csrf
-                <a class="btn btn-primary" href="{{ route('logout')}}">خروج</a>
+                <button class="btn btn-primary" type="submit" >خروج</button>
             </form>
         </div>
     </div>

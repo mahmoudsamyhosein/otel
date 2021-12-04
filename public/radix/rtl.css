@@ -95,7 +95,7 @@
     display: none;
 }
 
-
+/* 
 a:hover ,a:link , a:active ,a:focus ,.footer .social a {
     
     color: #17a2b8;
@@ -112,7 +112,8 @@ button, a, a:hover, a:focus, a:active{
 }
 
 
-/* Logo otel */
-.otel{
-    
-}
+a:-webkit-any-link {
+    color: #17a2b8;
+    cursor: pointer;
+    text-decoration: underline;
+} */

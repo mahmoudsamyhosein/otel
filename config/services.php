@@ -30,4 +30,17 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    
+    'google' => [
+        'client_id' => 'GOOGLE_APP_CLIENT_ID',
+        'client_secret' => 'GOOGLE_APP_CLIENT_SECRET',
+        'redirect' => 'http://localhost:8000/auth/google-callback',
+    ],
+
+    'facebook' => [
+        'client_id' => 'FACEBOOK_APP_CLIENT_ID',
+        'client_secret' => 'FACEBOOK_APP_CLIENT_SECRET',
+        'redirect' => 'CALLBACK_RETURN_URL',
+    ],
+
 ];

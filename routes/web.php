@@ -40,3 +40,10 @@ Route::get('admin/bookings/index', [App\Http\Controllers\Booking_Controller::cla
 Route::get('admin/theme/dashboard', [App\Http\Controllers\Dashboard_Controller::class, 'index'])->name('dashboard');
 Route::get('admin/sms/index', [App\Http\Controllers\Sms_Controller::class, 'index'])->name('sms');
 Route::get('admin/sms/create', [App\Http\Controllers\Sms_Controller::class, 'create'])->name('create_sms');
+Route::post('/', [App\Http\Controllers\Subscribe_Controller::class, 'store'])->name('Subscribe');
+Route::get('google', [SocialiteAuthController::class, 'googleRedirect'])->name('auth/google');
+Route::get('/auth/google-callback', [SocialiteAuthController::class, 'loginWithGoogle']);
+Route::get('facebook', [SocialAuthController::class, 'facebookRedirect'])->name('auth/facebook');
+Route::get('facebook/callback', [SocialAuthController::class, 'loginWithFacebook']);
+
+
