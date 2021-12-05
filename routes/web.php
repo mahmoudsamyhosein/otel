@@ -45,6 +45,10 @@ Route::get('admin/sms/create', [App\Http\Controllers\Sms_Controller::class, 'cre
 Route::get('alerts/index', [App\Http\Controllers\HomeController::class, 'create'])->name('index');
 Route::post('alerts/index', [App\Http\Controllers\HomeController::class, 'store'])->name('index');
 
+Route::get('alerts/index', [App\Http\Controllers\HomeController::class, 'form_create'])->name('index');
+Route::post('alerts/index', [App\Http\Controllers\HomeController::class, 'form_store_1'])->name('index');
+
+
 Route::get('google', [App\Http\Controllers\SocialiteAuthController::class, 'googleRedirect'])->name('auth/google');
 Route::get('/auth/google-callback', [App\Http\Controllers\SocialiteAuthController::class, 'loginWithGoogle']);
 Route::get('facebook', [App\Http\Controllers\SocialAuthController::class, 'facebookRedirect'])->name('auth/facebook');
