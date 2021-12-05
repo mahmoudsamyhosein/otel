@@ -18,8 +18,8 @@ class CreateMailsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique;
-            $table->string('kind');
-            $table->string('mail_list');
+            $table->string('kind')->nullable();
+            $table->string('mail_list')->nullable();
             
             $table->timestamps();
         });

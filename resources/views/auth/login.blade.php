@@ -39,7 +39,7 @@
                                     <form method="POST" action="{{ route('login')}}" class="user">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email"  id="email" class="form-control @error('email') is-invaild @enderror" value='{{old ('email')}}' required autocomplete="email" autofocus
+                                            <input type="email" name="email" id="email" class="form-control @error('email') is-invaild @enderror" value='{{old ('email')}}' required autocomplete="email" autofocus
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="{{__('radix.Enter Email Address...') }}">
                                             @error('email')
@@ -50,7 +50,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" id="password"  class="form-control  @error('password') is-invaild @enderror " value="{{ old ('password')}}" required autocomplete="password" autofocus
+                                            <input type="password" name="password" id="password"  class="form-control  @error('password') is-invaild @enderror " value="{{ old ('password')}}" required autocomplete="password" autofocus
                                                 id="Password" placeholder="{{ __('radix.Password') }}">
                                             @error('password')
                                                 <span class="invaild-feedback" role="alert">

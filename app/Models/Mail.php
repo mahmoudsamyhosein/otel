@@ -12,17 +12,9 @@ class Mail extends Model
 
         'name',
         'email',
-        'kind',
-        'mail_list',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
+        
     ];
+
+
+   
 }

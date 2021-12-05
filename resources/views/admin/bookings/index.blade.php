@@ -32,7 +32,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered"  name='bookingTable' id="bookingTable" width="10%" cellspacing="0">
+                    <table class="table table-bordered"   width="5%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>رقم العقد</th>
@@ -52,13 +52,14 @@
                                 <th>الرصيد</th>
                                 <th>العمليات</th>
                                 
+                                
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $bookings as $booking )
+                            @foreach ( $news as $booking )
                                 <tr>
-                                    <td> {{ $booking->contract_no }}</td>
                                     
+                                    <td> {{ $booking->contract_no }}</td>
                                     <td> {{ $booking->booking_status }}</td>
                                     <td> {{ $booking->flat }}</td>  
                                     <td> {{ $booking->flat_kind }}</td> 
@@ -73,7 +74,17 @@
                                     <td> {{ $booking->insurances }}</td>                        
                                     <td> {{ $booking->paid_up }}</td>
                                     <td> {{ $booking->Balance }}</td>
-                                  
+                                    
+                                    
+                                    <td>
+                                        <form action="{{ route('bookings.destroy', $booking->id )}}" method="POST">   
+                                            <a class="btn btn-info" href="">عرض</a>    
+                                            <a class="btn btn-primary" href="{{ route('bookings.create')}}">تعديل</a>   
+                                            @csrf
+                                            @method('delete')      
+                                            <button type="submit" class="btn btn-danger">حذف</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -99,6 +110,8 @@
                         </tfoot>
                      
                     </table>
+                    
+                  
                 </div>
             </div>
         </div>

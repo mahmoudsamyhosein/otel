@@ -50,7 +50,7 @@
                        
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('bookings')}}">
+                <a class="nav-link" href="{{ route('bookings.index')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الحجوزات</span></a>
             </li>

@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -51,6 +52,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+
             
         ]);
     }
@@ -90,21 +92,23 @@ class RegisterController extends Controller
             "city"         =>                 $request->city,
             "email"         =>                $request->email,
             "address"       =>                $request->address,
-            "password"      =>                $request->password,
+            "password"              =>        $request->password,
             "password_confirm"      =>        $request->password_confirm,
         );
 
         $user           =       User::create($dataArray);
 
 
-        if(!is_null($user)) {
-            return back()->with("success", "Success! Registration completed");
+        if ($user) {
+            Alert::success('نجاح', 'شكرا لتسجيلك');
+            return back();
         }
-
         else {
-            return back()->with("failed", "Alert! Failed to register");
+            Alert::error('فشل', 'لم يتم تسجيلك برجاء المحاولة مرة أخري ');
+            return back();
         }
-
+        
+        return redirect()->route('register');
         
     }
 }

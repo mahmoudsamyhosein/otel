@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
-class Booking_Controller extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,10 @@ class Booking_Controller extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
-        return view('admin/bookings/index',compact('bookings'));
+        $news = Booking::latest()->paginate(10);
+            
+        return view('bookings.index',compact('news'));
+           
     }
 
     /**
@@ -24,7 +26,8 @@ class Booking_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('bookings.create');
+       
     }
 
     /**
@@ -35,7 +38,15 @@ class Booking_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'contract_no' => 'required',
+            'booking_status' => 'required',
+        ]);
+    
+        Booking::create($request->all());
+     
+        return redirect()->route('bookings.index')
+                        ->with('success','Post created successfully.');
     }
 
     /**
@@ -78,8 +89,10 @@ class Booking_Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $data)
     {
-        //
+        $data->delete();
+        return redirect()->route('bookings.destroy')
+            ->with('نجاح','تم الحذف بنجاح !');
     }
 }
