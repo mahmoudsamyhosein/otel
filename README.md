@@ -1,4 +1,5 @@
-<p align="center"><a href="http://otel-by-mshm.herokuapp.com/public/" target="_blank"><img src="https://i.suar.me/qKpqn/l" width="400"></a></p>
+<p align="center"><a href="http://otel-by-mshm.herokuapp.com/public/" target="_blank"><img src="https://i.suar.me/qKpqn/l" ></a></p>
+<p align="center"><a href="http://otel-by-mshm.herokuapp.com/public/" target="_blank"><img src="https://i.suar.me/lK6Lv/l" ></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
