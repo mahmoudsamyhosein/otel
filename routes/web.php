@@ -42,8 +42,8 @@ Route::get('admin/theme/dashboard', [App\Http\Controllers\Dashboard_Controller::
 Route::get('admin/sms/index', [App\Http\Controllers\Sms_Controller::class, 'index'])->name('sms');
 Route::get('admin/sms/create', [App\Http\Controllers\Sms_Controller::class, 'create'])->name('create_sms');
 
-Route::get('front-end-theme/index', [App\Http\Controllers\HomeController::class, 'create'])->name('index');
-Route::post('front-end-theme/index', [App\Http\Controllers\HomeController::class, 'store'])->name('index');
+Route::get('alerts/index', [App\Http\Controllers\HomeController::class, 'create'])->name('index');
+Route::post('alerts/index', [App\Http\Controllers\HomeController::class, 'store'])->name('index');
 
 Route::get('google', [App\Http\Controllers\SocialiteAuthController::class, 'googleRedirect'])->name('auth/google');
 Route::get('/auth/google-callback', [App\Http\Controllers\SocialiteAuthController::class, 'loginWithGoogle']);

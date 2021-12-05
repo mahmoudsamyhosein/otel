@@ -108,7 +108,7 @@ class RegisterController extends Controller
             return back();
         }
         
-        return redirect()->route('register');
+        return redirect()->view('alerts/index');
         
     }
 }

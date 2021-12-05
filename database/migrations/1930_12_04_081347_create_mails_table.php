@@ -14,13 +14,12 @@ class CreateMailsTable extends Migration
     public function up()
     {
         Schema::create('mails', function (Blueprint $table) {
-            
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique;
+            $table->string('name')->unique();
+            $table->string('email')->unique();
             $table->string('kind')->nullable();
             $table->string('mail_list')->nullable();
-            
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
     }

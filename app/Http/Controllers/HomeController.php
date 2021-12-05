@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function create()
     {
-        return view('index');
+        return view('alerts/index');
     }
 
 
@@ -57,7 +57,7 @@ class HomeController extends Controller
             return back();
         }
         
-        return redirect()->route('index');
+        return redirect()->view('alerts/index');
     }
 
 
