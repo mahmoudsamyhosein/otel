@@ -167,6 +167,7 @@ return [
         Yajra\DataTables\EditorServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+        
 
 
         /*
