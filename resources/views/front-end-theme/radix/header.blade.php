@@ -57,58 +57,58 @@
                         <!--/ End Button -->
                     </div>
                     <!--/ End Main Menu -->
-                    <!-- Button trigger modal -->
-                                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">لطلب نسخة تجريبية يرجى تعبئة البيانات أدناه
+                        <!-- Button trigger modal -->
+                                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">لطلب نسخة تجريبية يرجى تعبئة البيانات أدناه
 
-                        </h5>
-                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                            <span style="padding-left:50px;" aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
-                                    <form class="form" method="POST" action="{{route('index')}}" enctype="multipart/form-data" >
-                                     @csrf
-                                        <div class="form-row">
-                                          <div class="form-group col-md-6">
-                                            <label for="inputEmail4"><span>الاسم بالكامل</span> </label>
-                                            <input type="text"  name='name' class="form-control" id="inputEmail4" placeholder="محمود سامي حسين متولي">
-                                          </div>
-                                          <div class="form-group col-md-6">
-                                            <label for="inputPassword4">رقم الجوال</label>
-                                            <input type="text" name='phone' class="form-control" id="inputPassword4" placeholder="0541321789">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label for="inputAddress">المدينة</label>
-                                          <input type="text" name='city' class="form-control" id="inputAddress" placeholder="الرياض">
-                                        </div>
-                                        <div class="form-group">
-                                          <label  for="inputAddress2">العنوان</label>
-                                          <input type="text" name='address' class="form-control" id="inputAddress2" placeholder="الرياض , شارع خالد بن الوليد">
-                                        </div>
-                                        <div class="form-group">
-                                            <label  for="inputEmail4">البريد الالكتروني</label>
-                                            <input type="email" name='email' class="form-control" placeholder='otel@gmail.com' id="inputEmail4">
-                                        </div>
-                                        <div class="form-group ">
-                                            <label  for="inputEmail4">أسم الفندق</label>
-                                            <input type="text" name='hotel_name' class="form-control" id="inputEmail4" placeholder="فندق تيرا">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputState">كيف تعرفت علي أوتيل</label>
-                                            <select id="inputState"  type='text' class="form-control">
-                                              <option selected>...أختر</option>
-                                              <option value="" name='how_know_us' >جوجل</option>
-                                              <option value="" name='how_know_us' >فيس بوك</option>
-                                            </select>
-                                        </div>
-                                    <button type="submit" class="btn btn-primary">أرسال</button>
-                                    </form>
+                            </h5>
+                            <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                                <span style="padding-left:50px;" aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                        <form class="form" method="POST" action="{{route('index')}}" enctype="multipart/form-data" >
+                                        @csrf
+                                            <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4"><span>الاسم بالكامل</span> </label>
+                                                <input type="text"  name='name' class="form-control" id="inputEmail4" placeholder="محمود سامي حسين متولي">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">رقم الجوال</label>
+                                                <input type="text" name='phone' class="form-control" id="inputPassword4" placeholder="0541321789">
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label for="inputAddress">المدينة</label>
+                                            <input type="text" name='city' class="form-control" id="inputAddress" placeholder="الرياض">
+                                            </div>
+                                            <div class="form-group">
+                                            <label  for="inputAddress2">العنوان</label>
+                                            <input type="text" name='address' class="form-control" id="inputAddress2" placeholder="الرياض , شارع خالد بن الوليد">
+                                            </div>
+                                            <div class="form-group">
+                                                <label  for="inputEmail4">البريد الالكتروني</label>
+                                                <input type="email" name='email' class="form-control" placeholder='otel@gmail.com' id="inputEmail4">
+                                            </div>
+                                            <div class="form-group ">
+                                                <label  for="inputEmail4">أسم الفندق</label>
+                                                <input type="text" name='hotel_name' class="form-control" id="inputEmail4" placeholder="فندق تيرا">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputState">كيف تعرفت علي أوتيل</label>
+                                                <select id="inputState"  type='text' class="form-control">
+                                                <option selected>...أختر</option>
+                                                <option value="" name='how_know_us' >جوجل</option>
+                                                <option value="" name='how_know_us' >فيس بوك</option>
+                                                </select>
+                                            </div>
+                                        <button type="submit" class="btn btn-primary">أرسال</button>
+                                        </form>
                         </div>
                         {{-- <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

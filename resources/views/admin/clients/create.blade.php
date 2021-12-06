@@ -26,66 +26,14 @@
 
             <!-- Main Content -->
             <div id="content">
-
-                
                 @include('admin/theme.topbar')
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    
-
-                   
             </div>
             <!-- End of Main Content -->
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary text-center"> العملاء </h6>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered"  name='guestsTable' id="guestsTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>الاسم</th>
-                                <th>نوع الاثبات	</th>
-                                <th>رقم الأثبات	</th>
-                                <th>مكان الاصدار</th>
-                                <th>جوال</th>
-                                <th>البريد الالكتروني</th>
-                                <th>العمليات</th>
-                                
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>#</th>
-                                <th>الاسم</th>
-                                <th>نوع الاثبات	</th>
-                                <th>رقم الأثبات	</th>
-                                <th>مكان الاصدار</th>
-                                <th>جوال</th>
-                                <th>البريد الالكتروني</th>
-                                <th>العمليات</th>
-                                
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr>
-                                
-                            </tr>
-                            
-                             
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
+        
     </div>
     <!-- /.container-fluid -->
 
@@ -139,9 +87,7 @@
                 {data: 'address',               name: 'address'},
                 {data: 'note',                  name: 'note'},
                 {data: 'notes_2',               name: 'notes_2'},
-
-
-
+                
                 {data: 'action',                name: 'action'}
             ]
         });
@@ -150,3 +96,7 @@
 </body>
 
 </html>
+
+
+
+        

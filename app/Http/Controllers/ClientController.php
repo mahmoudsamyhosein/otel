@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Guest;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Pagination\Paginator;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
 class ClientController extends Controller
 {
@@ -17,6 +19,9 @@ class ClientController extends Controller
      */
     public function index()
     {
+        $allclients = Guest::latest()->paginate(10);
+
+        return view('admin/clients/index',compact('allclients'));
         
     }
 
@@ -27,20 +32,7 @@ class ClientController extends Controller
      */
     public function create(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Guest::all();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row) {
-                        $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
-                           
-                           return $action_btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
 
-        return view('admin/clients/edit');
     }
 
     /**
@@ -62,38 +54,12 @@ class ClientController extends Controller
      */
     public function show(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Guest::all();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row) {
-                        $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
-                           
-                           return $action_btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);         
-        }
-           
-        return view('admin/clients/show');
+        
     }
 
     public function view(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Guest::all();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row) {
-                           $action_btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
-                           
-                           return $action_btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
-
-        return view('admin/clients/view');
+        
     }
 
     /**
@@ -125,16 +91,13 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Guest $guest)
     {
-        // $guest = Guest::where('id','$id')->first();
-        // if($guest){
-        //     return $guest->delete();
-        // }
+        $guest->delete();
 
-        // session()->flash('flash_massage','تم حذف العميل بنجاح');
-
-        // return(redirect(route('client_destroy'),compact($guest)));
+        return redirect()->route('clients')
+            ->withsuccess('تم الحذف بنجاح');
+        
 
     }
 }

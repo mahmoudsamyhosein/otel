@@ -50,7 +50,7 @@
                        
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('bookings.index')}}">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الحجوزات</span></a>
             </li>
@@ -76,7 +76,9 @@
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('clients')}}">
+                @auth
+                    <a class="nav-link" href="{{ route('clients')}}">
+                @endauth
                     <i class="fas fa-fw fa-user"></i>
                     <span>العملاء</span></a>
             </li>

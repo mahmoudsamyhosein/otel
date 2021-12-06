@@ -64,16 +64,9 @@
                                 <th>مكان الاصدار</th>
                                 <th>جوال</th>
                                 <th>البريد الالكتروني</th>
-                                <th>العمليات</th>
-                                {{-- <form class="d-inline-block" method="POST" action="{{ route('client_destroy') }}">
-                                    @method('delete')
-                                    @csrf
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('هل أنت متأكد؟')"><i class="fa fa-trash"></i> حذف</button> 
-                            </form> --}}
-                                
+                                <th>العمليات</th>  
                             </tr>
                         </tfoot>
-                     
                     </table>
                 </div>
             </div>
@@ -109,24 +102,26 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var table = $('#guestsTable').DataTable({
-            processing: true,
+            //processing: true,
             serverSide: true,
-            ajax: "{{ route('clients') }}",
+            ajax: "{{ route('view_clients') }}",
             columns: [
-                {data: 'DT_RowIndex',             name: 'DT_RowIndex'},
-                
-                {data: 'name',                    name: 'name'},
-                {data: 'approve_type',            name: 'approve_type'},
-                {data: 'approve_number',          name: 'approve_number'},
-                {data: 'place_of_issue',          name: 'place_of_issue'},
-                {data: 'phone',                   name: 'phone'},
-                {data: 'email',                   name: 'email'},
+                {data: 'DT_RowIndex',        name: 'DT_RowIndex'},
 
+                {data: 'name',               name: 'name'},
+                {data: 'approve_type',       name: 'approve_type'},
+                {data: 'approve_number',     name: 'approve_number'},
+                {data: 'place_of_issue',     name: 'place_of_issue'},
+                {data: 'date_of_birth',      name: 'date_of_birth'},
+                {data: 'date_of_expiry',     name: 'date_of_expiry'},
+                {data: 'address',            name: 'address'},
+                {data: 'phone',              name: 'phone'},
+                {data: 'email',              name: 'email'},
+                {data: 'place_of_work',      name: 'place_of_work'},
+                {data: 'phone_of_work',      name: 'phone_of_work'},
 
-                {data: 'action',                  name: 'action'}
-                
+                {data: 'action',             name: 'action'}
             ]
-            
         });
     });
   </script>
