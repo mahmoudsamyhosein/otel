@@ -95,7 +95,7 @@ class ClientController extends Controller
     {
         $guest->delete();
 
-        return redirect()->route('clients')
+        return redirect()->route('clients.index')
             ->withsuccess('تم الحذف بنجاح');
         
 

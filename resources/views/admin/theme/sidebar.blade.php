@@ -77,7 +77,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 @auth
-                    <a class="nav-link" href="{{ route('clients')}}">
+                    <a class="nav-link" href="{{ route('clients.index')}}">
                 @endauth
                     <i class="fas fa-fw fa-user"></i>
                     <span>العملاء</span></a>

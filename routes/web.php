@@ -37,6 +37,22 @@ Route::get('admin/controlpanel', [App\Http\Controllers\ControlPanel_Controller::
 Route::get('admin/doc_mshm', [App\Http\Controllers\docController::class, 'index'])->name('doc_mshm');
 
 
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{   
+
+    /**
+    * client Routes
+    */
+    Route::group(['prefix' => 'guests'], function() {
+            Route::get('/', 'ClientController@index')->name('clients.index');
+            Route::get('/create', 'ClientController@create')->name('clients.create');
+            Route::post('/create', 'ClientController@store')->name('clients.store');
+            Route::get('/{guest}/show', 'ClientController@show')->name('clients.show');
+            Route::get('/{guest}/edit', 'ClientController@edit')->name('clients.edit');
+            Route::patch('/{guest}/update', 'ClientController@update')->name('clients.update');
+            Route::delete('/{guest}/delete', 'ClientController@destroy')->name('clients.destroy');
+    });
+});
 
 
 
@@ -44,18 +60,24 @@ Route::get('admin/doc_mshm', [App\Http\Controllers\docController::class, 'index'
 
 
 
-Route::get('admin/clients/index', [App\Http\Controllers\ClientController::class, 'show'])->name('allclient-show');
-
-Route::delete('admin/clients/index', [App\Http\Controllers\ClientController::class, 'edit'])->name('allclient-edit');
 
 
 
 
 
 
-Route::get('admin/clients/index', [App\Http\Controllers\ClientController::class, 'index'])->name('clients');
+// Route::get('admin/clients/index', [App\Http\Controllers\ClientController::class, 'show'])->name('allclient-show');
 
-Route::delete('admin/clients/index', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
+// Route::delete('admin/clients/index', [App\Http\Controllers\ClientController::class, 'edit'])->name('allclient-edit');
+
+
+
+
+
+
+// Route::get('admin/clients/index', [App\Http\Controllers\ClientController::class, 'index'])->name('clients');
+
+// Route::delete('admin/clients/index', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
 
 
 

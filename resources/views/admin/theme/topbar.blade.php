@@ -67,7 +67,7 @@
             <!-- Sidebar Toggle (Topbar) -->
         <!-- Large modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">أسعار الرسائل</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="">المنصة الوطنية للرصد السياحي
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">المنصة الوطنية للرصد السياحي
         </button>
 
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -163,8 +163,32 @@
                             اذا تم ايداع المبلغ بعد الرابعة عصرا فان شحن الرسائل سيكون في اليوم التالي</span>
                 </div>
             </div>
-        </div>
-                                                    
-      
-    </nav>
-    <!-- End of Topbar -->
+
+        </div>  
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog bd-example-modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">المنصة الوطنية للرصد السياحي</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="image">
+                            <img class="card-img-top" src="{{asset('admin/img/otel-01.jpg')}}"  height='400x' width='250px' alt="الهيئة العامة للرصد السياحي">
+                        </div>
+                        <div class="image">
+                            <img  class="card-img-top" src="{{asset('admin/img/otel-02.jpg')}}"  height='400px' width='250px' alt="الهيئة العامة للرصد السياحي">
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+                                                                
+                
+</nav>
+<!-- End of Topbar -->
