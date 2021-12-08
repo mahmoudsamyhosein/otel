@@ -5564,7 +5564,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .close {
-  float: right;
+  float:right;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
@@ -5583,6 +5583,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 button.close {
+  float:left;
   padding: 0;
   background-color: transparent;
   border: 0;

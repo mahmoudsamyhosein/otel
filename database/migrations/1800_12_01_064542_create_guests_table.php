@@ -23,16 +23,16 @@ class CreateGuestsTable extends Migration
             $table->date('date_of_birth');
             $table->string('email')->unique();
             $table->integer('phone_of_work')->unique();
-            $table->string('category');
+            $table->string('category')->unique();
             $table->string('nationalty');
             $table->integer('id_copy');
             $table->date('date_of_expiry');
-            $table->string('kind');
+            $table->string('kind')->unique();
             $table->integer('phone')->unique();
-            $table->string('place_of_work');
-            $table->string('address');
-            $table->string('note');
-            $table->string('note_2');
+            $table->string('place_of_work')->nullable();;
+            $table->string('address')->nullable();;
+            $table->string('note')->nullable();
+            $table->string('note_2')->nullable();;
             
             $table->timestamps();
         });

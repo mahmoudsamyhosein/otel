@@ -9,7 +9,6 @@ use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -53,7 +52,16 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
 
-            
+            // 'first_name'            =>      ['string', 'max:255'],
+            // "last_name"             =>      ['string', 'max:255'],
+            // 'email'                 =>      ['required', 'string', 'email', 'max:255', 'unique:users'],
+            // "phone"                 =>      ['required', 'numeric', 'min:10'],
+            // "city"                  =>      ['string', 'max:255'],
+            // 'password'              =>      ['required', 'string', 'min:8', 'confirmed'],
+            // 'password'              =>      ['required', 'string', 'min:8', 'same:password'],
+            // "hotel_name"            =>      ['string', 'max:255'],
+            // "neighborhood"          =>      ['string', 'max:255'],
+            // "address"               =>      ['string', 'max:255'],
         ]);
     }
 
@@ -63,7 +71,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+   
+        protected function create(array $data)
     {
         return User::create([
             'first_name' =>           $data['first_name'],
@@ -79,9 +88,10 @@ class RegisterController extends Controller
         ]);
 
     }
+        
+    
 
-
-    public function store(request $request){
+    protected function store(request $request){
 
         $dataArray      =       array(
             
@@ -99,16 +109,10 @@ class RegisterController extends Controller
         $user           =       User::create($dataArray);
 
 
-        if ($user) {
-            Alert::success('نجاح', 'شكرا لتسجيلك');
-            return back();
-        }
-        else {
-            Alert::error('فشل', 'لم يتم تسجيلك برجاء المحاولة مرة أخري ');
-            return back();
-        }
         
-        return redirect()->view('alerts/index');
         
     }
+
+
+   
 }

@@ -29,7 +29,7 @@ class Guest extends Model
         'place_of_work',
         'address',
         'note',
-        'notes_2', 
+        'note_2', 
         'approve_number',
     ];
 

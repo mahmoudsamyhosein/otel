@@ -11,10 +11,8 @@
     <!-- Bootstrap Date-Picker Plugin -->
 <!--  jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
 <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
@@ -71,7 +69,7 @@
                                             <td>    {{ $allclient->email}}             </td>
                                             <td>
                                                 <a href="#exampleModalCenter20" data-toggle="modal" data-target="#exampleModalCenter20" class="btn btn-warning btn-sm">عرض</a>
-                                                {{-- <a href="#exampleModalCenter20" data-toggle="modal" data-target="#exampleModalCenter20" class="btn btn-info btn-sm">تعديل</a>    --}}
+                                                <a href="#exampleModalCenter20"  data-toggle="modal" data-target="#exampleModal20" class="btn btn-info btn-sm">تعديل</a>
                                                     {!! Form::open(['method' => 'DELETE','route' => ['clients.destroy', $allclient->id],'style'=>'display:inline']) !!}
                                                     {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
                                                     {!! Form::close() !!}
@@ -96,8 +94,6 @@
                             <div class="d-flex">
                                  {!! $allclients->links() !!}
                             </div>
-
-                            
                             </div>
                         </div>
             </div>
@@ -112,7 +108,7 @@
                                             </button>
                                     </div>
                                         <div class="modal-body">
-                                                    <form class="form" method="POST" action="" enctype="multipart/form-data" >
+                                                    <form class="form" method="POST" action="{{ route('clients.create')}}" enctype="multipart/form-data" >
                                                         @csrf
                                                             <div class="form-row">
                                                                     <div class="form-group col-lg-2 col-md-2">
@@ -122,7 +118,7 @@
 
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputState">نوع العميل</label>
-                                                                        <select id="inputState"  type='text' class="form-control">
+                                                                        <select id="inputState" name="guest_type"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
                                                                         @php $formhandler = include(resource_path('countries/countries.php')); @endphp
                                                                             @foreach ($formhandler['client_type'] as $client_type => $value)
@@ -132,7 +128,7 @@
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputState">نوع الأثبات</label>
-                                                                        <select id="inputState"  type='text' class="form-control">
+                                                                        <select id="inputState" name="approve_type" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
                                                                             @foreach ($formhandler['client_type'] as $client_type => $value)
                                                                                 <option value="{{$client_type}}">{{$value}} </option>
@@ -142,7 +138,7 @@
 
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputState">نسخة البطاقة</label>
-                                                                        <select id="inputState"  type='text' class="form-control">
+                                                                        <select id="inputState" name="id_copy" type='text' class="form-control">
                                                                         <option selected>...أختر</option>   
                                                                             <option>
                                                                                   @php
@@ -152,11 +148,9 @@
                                                                             </option>        
                                                                         </select>
                                                                     </div>
-
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputState">التصنيف</label>
-                                                                        <select id="inputState"  type='text' class="form-control">
+                                                                        <select id="inputState" name="category" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
                                                                             @php $formhandler = include(resource_path('countries/countries.php')); @endphp
                                                                             @foreach ($formhandler['categories'] as $categories => $value)
@@ -164,12 +158,9 @@
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
-                                                                    
-
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputState">الجنسية</label>
-                                                                        <select id="inputState"  type='text' class="form-control">
+                                                                        <select id="inputState" name="nationalty"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
                                                                             @php $formhandler = include(resource_path('countries/countries.php')); @endphp
                                                                             @foreach ($formhandler['nationalty'] as $nationalty => $value)
@@ -177,7 +168,6 @@
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputState">الجنس</label>
                                                                         <select id="inputState" name='kind' type='text' class="form-control">
@@ -188,53 +178,50 @@
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
-
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputPassword4">رقم الجوال</label>
                                                                         <input type="text" name='phone' class="form-control" id="inputPassword4" >
                                                                     </div>
-
-
+                                                                    <div class="form-group col-lg-2 col-md-2">
+                                                                        <label for="inputPassword4">رقم الأثبات</label>
+                                                                        <input type="text" name='approve_number' class="form-control" id="inputPassword4" >
+                                                                    </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputAddress">مكان العمل</label>
-                                                                        <input type="text" name='city' class="form-control" id="inputAddress">
+                                                                        <input type="text" name='place_of_work' class="form-control" id="inputAddress">
                                                                     </div>
-
-
+                                                                    <div class="form-group col-lg-2 col-md-2">
+                                                                        <label for="inputAddress">مكان الأصدار</label>
+                                                                        <input type="text" name='place_of_issue' class="form-control" id="inputAddress">
+                                                                    </div>
+                                                                    <div class="form-group col-lg-2 col-md-2">
+                                                                        <label for="inputAddress">تاريخ الأنتهاء</label>
+                                                                        <input type="text" name='date_of_expiry' class="form-control" id="inputAddress">
+                                                                    </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputAddress">هاتف العمل</label>
-                                                                        <input type="text" name='city' class="form-control" id="inputAddress" >
+                                                                        <input type="text" name='phone_of_work' class="form-control" id="inputAddress" >
                                                                     </div>
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="inputAddress">تاريخ الميلاد</label>
-                                                                        <input type="text" name='city' class="form-control" id="inputAddress" >
+                                                                        <input type="text" name='date_of_birth' class="form-control" id="inputAddress" >
                                                                     </div>
-                                                                    
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="exampleFormControlTextarea1">العنوان </label>
-                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                        <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                                     </div>
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label  for="inputEmail4">البريد الالكتروني</label>
                                                                         <input type="email" name='email' class="form-control"  id="inputEmail4">
                                                                     </div>
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="exampleFormControlTextarea1">ملاحظات </label>
-                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                        <textarea class="form-control" name='note' id="exampleFormControlTextarea1" rows="3"></textarea>
                                                                     </div>
-
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="exampleFormControlTextarea1">ملاحظات خاصة</label>
-                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                        <textarea class="form-control"  name='note_2' id="exampleFormControlTextarea1" rows="3"></textarea>
                                                                     </div>
-
-                                                                   
-
                                                             </div>
                                                         <button type="submit" class="btn btn-primary">أرسال</button>
                                                     </form>
@@ -243,9 +230,8 @@
                         </div>
                         </div>                                                
                         <!-- نهاية أضافة بيانات العملاء -->
-
                          {{-- programedbyMSHM --}}
-                    <!-- بداية تعديل بيانات العملاء -->
+                    <!-- بداية عرض  بيانات العملاء -->
                         <div class="modal fade" id="exampleModalCenter20" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle20" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -261,7 +247,7 @@
                                                         <table class="table">
                                                             <thead class="thead-dark">
                                                             <tr class="text-center ">
-                                                                <th scope="col">المعلومات الرئيسية </th>
+                                                                <th class="p-3 mb-2 bg-info text-white" scope="col">المعلومات الرئيسية </th>
                                                             </tr>
                                                             </thead>
                                                             <tbody class="text-right">
@@ -308,7 +294,6 @@
                                                                 <td>{{$allclient->phone_of_work}}</td>
 
                                                             </tr>
-                                                            
                                                             </tbody>
                                                         </table>
                                             </form>
@@ -317,35 +302,164 @@
                                         </div>  
                                 </div>
                         </div>
-                    <!-- نهاية تعديل بيانات العملاء -->
-                    {{-- programedbyMSHM --}}
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal20">
-                            Launch demo modal
-                        </button>
-                        
+                    <!-- نهاية عرض  بيانات العملاء -->
+                    {{-- programedbyMSHM --}}                        
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel20" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel20">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel20">تعديل بيانات العميل </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 </div>
                                 <div class="modal-body">
-                                ...
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                                    <form class="form" method="POST" action="{{ route('clients.update', $allclient->id )}}" enctype="multipart/form-data" >
+                                        @method('patch')
+                                        @csrf
+                                                <div class="form-row">
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputEmail4"><span>الاسم بالكامل</span> </label>
+                                                            <input type="text" value="{{ $allclient->name }}" name='name' class="form-control" id="inputEmail4" >
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputState">نوع العميل</label>
+                                                            <select id="inputState" name="guest_type"  type='text' class="form-control">
+                                                            <option selected>...أختر</option>
+                                                            @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                @foreach ($formhandler['client_type'] as $client_type => $value)
+                                                                    <option value="{{$client_type}}">{{$value}} </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputState">نوع الأثبات</label>
+                                                            <select id="inputState" name="approve_type" type='text' class="form-control">
+                                                            <option selected>...أختر</option>
+                                                                @foreach ($formhandler['client_type'] as $client_type => $value)
+                                                                    <option value="{{$client_type}}">{{$value}} </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputState">نسخة البطاقة</label>
+                                                            <select id="inputState" name="id_copy" type='text' class="form-control">
+                                                            <option selected>...أختر</option>   
+                                                                <option>
+                                                                    @php
+                                                                        $num =1;
+                                                                        while($num <= 30){  echo '<option>'; echo $num++; echo '</option>';  }
+                                                                    @endphp
+                                                                </option>        
+                                                            </select>
+                                                        </div>
+
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputState">التصنيف</label>
+                                                            <select id="inputState" name="category" type='text' class="form-control">
+                                                            <option selected>...أختر</option>
+                                                                @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                @foreach ($formhandler['categories'] as $categories => $value)
+                                                                    <option value="{{$categories}}">{{$value}} </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        
+
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputState">الجنسية</label>
+                                                            <select id="inputState" name="nationalty"  type='text' class="form-control">
+                                                            <option selected>...أختر</option>
+                                                                @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                @foreach ($formhandler['nationalty'] as $nationalty => $value)
+                                                                    <option value="{{$nationalty}}">{{$value}} </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputState">الجنس</label>
+                                                            <select id="inputState" name='kind' type='text' class="form-control">
+                                                            <option selected>...أختر</option>
+                                                                @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                @foreach ($formhandler['kind'] as $kind => $value)
+                                                                    <option value="{{$kind}}">{{$value}} </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputPassword4">رقم الجوال</label>
+                                                            <input type="text" value='{{ $allclient->phone }}'  name='phone' class="form-control" id="inputPassword4" >
+                                                        </div>
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputPassword4">رقم الأثبات</label>
+                                                            <input type="text" value='{{ $allclient->approve_number }}' name='approve_number' class="form-control" id="inputPassword4" >
+                                                        </div>
+
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputAddress">مكان العمل</label>
+                                                            <input type="text" value='{{ $allclient->place_of_work }}' name='place_of_work' class="form-control" id="inputAddress">
+                                                        </div>
+
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputAddress">مكان الأصدار</label>
+                                                            <input type="text" value='{{ $allclient->place_of_issue }}' name='place_of_issue' class="form-control" id="inputAddress">
+                                                        </div>
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputAddress">تاريخ الأنتهاء</label>
+                                                            <input type="text" value='{{ $allclient->date_of_expiry }}' name='date_of_expiry' class="form-control" id="inputAddress">
+                                                        </div>
+
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputAddress">هاتف العمل</label>
+                                                            <input type="text" value='{{ $allclient->phone_of_work }}' name='phone_of_work' class="form-control" id="inputAddress" >
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="inputAddress">تاريخ الميلاد</label>
+                                                            <input type="text" value='{{ $allclient->date_of_birth }}' name='date_of_birth' class="form-control" id="inputAddress" >
+                                                        </div>
+                                                        
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="exampleFormControlTextarea1">العنوان </label>
+                                                            <textarea class="form-control" value='{{ $allclient->address }}'  name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label  for="inputEmail4">البريد الالكتروني</label>
+                                                            <input type="email" value='{{ $allclient->email }}' name='email' class="form-control"  id="inputEmail4">
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="exampleFormControlTextarea1">ملاحظات </label>
+                                                            <textarea class="form-control"  value='{{ $allclient->note }}' name='note' id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                        </div>
+
+                                                        <div class="form-group col-lg-2 col-md-2">
+                                                            <label for="exampleFormControlTextarea1">ملاحظات خاصة</label>
+                                                            <textarea class="form-control"  value='{{ $allclient->note_2}}' name='note_2' id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                        </div>                                                    
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">أغلاق</button>
+                                                <button type="button" class="btn btn-primary">حفظ التعديلات</button>
+                                            </div>
+                                    </form>
                             </div>
                             </div>
                         </div>
-
-   
     </div>
 <!-- End of Main Content -->
 <!-- Footer -->

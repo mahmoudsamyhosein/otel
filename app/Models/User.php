@@ -27,8 +27,6 @@ class User extends Authenticatable
         'neighborhood',
         'address',
         'password',
-        'google_id',
-        'fb_id',
     ];
 
     /**

@@ -171,7 +171,7 @@
                 </div>
             </li>
 
-
+                
              <!-- Nav Item - Tables -->
              <li class="nav-item">
                 <a class="nav-link" href="{{ route('doc_mshm')}}">

@@ -35,11 +35,8 @@ ____________________________________control_panel_______________________________
 */
 Route::get('admin/controlpanel', [App\Http\Controllers\ControlPanel_Controller::class, 'show'])->name('controlpanel');
 Route::get('admin/doc_mshm', [App\Http\Controllers\docController::class, 'index'])->name('doc_mshm');
-
-
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
-
     /**
     * client Routes
     */
@@ -53,63 +50,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             Route::delete('/{guest}/delete', 'ClientController@destroy')->name('clients.destroy');
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Route::get('admin/clients/index', [App\Http\Controllers\ClientController::class, 'show'])->name('allclient-show');
-
-// Route::delete('admin/clients/index', [App\Http\Controllers\ClientController::class, 'edit'])->name('allclient-edit');
-
-
-
-
-
-
-// Route::get('admin/clients/index', [App\Http\Controllers\ClientController::class, 'index'])->name('clients');
-
-// Route::delete('admin/clients/index', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('admin/theme/dashboard', [App\Http\Controllers\Dashboard_Controller::class, 'index'])->name('dashboard');
 Route::get('admin/sms/index', [App\Http\Controllers\Sms_Controller::class, 'index'])->name('sms');
 Route::get('admin/sms/create', [App\Http\Controllers\Sms_Controller::class, 'create'])->name('create_sms');
-
 Route::get('alerts/index', [App\Http\Controllers\HomeController::class, 'create'])->name('index');
 Route::post('alerts/index', [App\Http\Controllers\HomeController::class, 'store'])->name('index');
-
 Route::get('alerts/index', [App\Http\Controllers\HomeController::class, 'form_create'])->name('index');
 Route::post('alerts/index', [App\Http\Controllers\HomeController::class, 'form_store_1'])->name('index');
-
-
-Route::get('google', [App\Http\Controllers\SocialiteAuthController::class, 'googleRedirect'])->name('auth/google');
-Route::get('/auth/google-callback', [App\Http\Controllers\SocialiteAuthController::class, 'loginWithGoogle']);
-Route::get('facebook', [App\Http\Controllers\SocialAuthController::class, 'facebookRedirect'])->name('auth/facebook');
-Route::get('facebook/callback', [App\Http\Controllers\SocialAuthController::class, 'loginWithFacebook']);

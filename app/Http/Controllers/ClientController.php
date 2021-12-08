@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Guest\StoreGuestRequest;
+use App\Http\Requests\Guest\UpdateGuestRequest;
+
 use App\Models\Guest;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
+
 
 class ClientController extends Controller
 {
@@ -30,8 +31,9 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
+        return view('clients.create');
 
     }
 
@@ -41,9 +43,13 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store( Guest $guest ,StoreGuestRequest  $request)
     {
-        //
+        $guest->create(array_merge($request->validated(),[
+        ]));
+        
+        return redirect()->route('clients.index')
+            ->withSuccess('تم أنشاء العميل بنجاح');
     }
 
     /**
@@ -52,8 +58,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Guest $guest)
     {
+        return view('clients.show',['guest' =>$guest]);
         
     }
 
@@ -68,9 +75,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Guest $guest)
     {
-        //
+        return view('clients.edit',['guest' =>$guest]);
     }
 
     /**
@@ -80,9 +87,12 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( Guest $guest , UpdateGuestRequest $request)
     {
-        //
+       $guest->update($request->validated());
+
+        return redirect()->route('clients.index')
+            ->withSuccess('تم تحديث بيانات العميل بنجاح');
     }
 
     /**
@@ -96,7 +106,7 @@ class ClientController extends Controller
         $guest->delete();
 
         return redirect()->route('clients.index')
-            ->withsuccess('تم الحذف بنجاح');
+            ->withSuccess('تم الحذف بنجاح');
         
 
     }
