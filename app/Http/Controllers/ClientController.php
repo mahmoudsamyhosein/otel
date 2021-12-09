@@ -67,11 +67,8 @@ class ClientController extends Controller
         $new_guest->note_2 = $request->note_2;
         $new_guest->approve_number = $request->approve_number;
 
-
         $new_guest->save();
 
-
-        
         session()->flash('flash_message', 'تمت أضافة العميل بنجاح');
         
         return redirect()->route('clients.index');
@@ -112,11 +109,8 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request ,Guest $guest, $id)
+    public function update(Request $request ,Guest $guest)
     {
-
-        $guest= Guest::find($id);
-
         $guest->name = $request->name;
         $guest->guest_type = $request->guest_type;
         $guest->phone_of_work = $request->phone_of_work;
@@ -136,12 +130,9 @@ class ClientController extends Controller
         $guest->note_2 = $request->note_2;
         $guest->approve_number = $request->approve_number;
 
-
         $guest->save();
-       
 
         session()->flash('flash_message', 'تم نعديل العميل بنجاح');
-
         return redirect(route('clients.index'));
     }
 
@@ -157,7 +148,5 @@ class ClientController extends Controller
 
         return redirect()->route('clients.index')
             ->withSuccess('تم الحذف بنجاح');
-        
-
     }
 }
