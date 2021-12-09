@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Guest\StoreGuestRequest;
-use App\Http\Requests\Guest\UpdateGuestRequest;
-
 use App\Models\Guest;
 use Illuminate\Http\Request;
 
 
 class ClientController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     
     /**
      * Display a listing of the resource.
@@ -43,13 +44,37 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( Guest $guest ,StoreGuestRequest  $request)
+    public function store(Request  $request)
     {
-        $guest->create(array_merge($request->validated(),[
-        ]));
+        $new_guest = new Guest();
+
+        $new_guest->name = $request->name;
+        $new_guest->guest_type = $request->guest_type;
+        $new_guest->phone_of_work = $request->phone_of_work;
+        $new_guest->approve_type = $request->approve_type;
+        $new_guest->place_of_issue = $request->place_of_issue;
+        $new_guest->date_of_birth = $request->date_of_birth;
+        $new_guest->email = $request->email;
+        $new_guest->category = $request->category;
+        $new_guest->nationalty = $request->nationalty;
+        $new_guest->id_copy = $request->id_copy;
+        $new_guest->date_of_expiry = $request->date_of_expiry;
+        $new_guest->kind = $request->kind;
+        $new_guest->phone = $request->phone;
+        $new_guest->place_of_work = $request->place_of_work;
+        $new_guest->address = $request->address;
+        $new_guest->note = $request->note;
+        $new_guest->note_2 = $request->note_2;
+        $new_guest->approve_number = $request->approve_number;
+
+
+        $new_guest->save();
+
+
         
-        return redirect()->route('clients.index')
-            ->withSuccess('تم أنشاء العميل بنجاح');
+        session()->flash('flash_message', 'تمت أضافة العميل بنجاح');
+        
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -60,7 +85,7 @@ class ClientController extends Controller
      */
     public function show(Guest $guest)
     {
-        return view('clients.show',['guest' =>$guest]);
+        return view('clients.show',['guest' => $guest]);
         
     }
 
@@ -75,9 +100,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Guest $guest)
+    public function edit()
     {
-        return view('clients.edit',['guest' =>$guest]);
+        return view('clients.edit');
     }
 
     /**
@@ -87,12 +112,37 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( Guest $guest , UpdateGuestRequest $request)
+    public function update(Request $request ,Guest $guest, $id)
     {
-       $guest->update($request->validated());
 
-        return redirect()->route('clients.index')
-            ->withSuccess('تم تحديث بيانات العميل بنجاح');
+        $guest= Guest::find($id);
+
+        $guest->name = $request->name;
+        $guest->guest_type = $request->guest_type;
+        $guest->phone_of_work = $request->phone_of_work;
+        $guest->approve_type = $request->approve_type;
+        $guest->place_of_issue = $request->place_of_issue;
+        $guest->date_of_birth = $request->date_of_birth;
+        $guest->email = $request->email;
+        $guest->category = $request->category;
+        $guest->nationalty = $request->nationalty;
+        $guest->id_copy = $request->id_copy;
+        $guest->date_of_expiry = $request->date_of_expiry;
+        $guest->kind = $request->kind;
+        $guest->phone = $request->phone;
+        $guest->place_of_work = $request->place_of_work;
+        $guest->address = $request->address;
+        $guest->note = $request->note;
+        $guest->note_2 = $request->note_2;
+        $guest->approve_number = $request->approve_number;
+
+
+        $guest->save();
+       
+
+        session()->flash('flash_message', 'تم نعديل العميل بنجاح');
+
+        return redirect(route('clients.index'));
     }
 
     /**

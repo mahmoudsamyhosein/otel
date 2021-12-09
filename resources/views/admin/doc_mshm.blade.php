@@ -20,8 +20,7 @@
 			<li><a href="#installation" title="html">قاعدة البيانات</a></li>
 			<li><a href="#html" title="html">الفرونت أند</a></li>
 			<li><a href="#css" title="css">الباك أند</a></li>
-			<li><a href="#js" title="js">الربط مع الخدمات</a></li>
-			
+			<li><a href="#js" title="js">الربط مع الخدمات</a></li>	
 		</ul>
 		<div id="documenter_copyright">جميع الحقوق محفوظة لموقع أوتيل
 		</div>
@@ -34,14 +33,9 @@
 			<h2>الهدف من المشروع توفير نظام تجاري لأدارة الفنادق والشقق المفروشة بالمملكة العربية السعودية وغيرها من الدول </h2>
 		</div>
 	<hr>
-
 	<img src="{{ asset ('doc/assets/images/8.jpg') }}" alt="">
 	<hr>
 	</section>
-
-
-
-
 		<!-- HTML Structure -->
 		<section id="html">
 			<div class="page-header text-center">
@@ -65,12 +59,6 @@
 		</section>
 		<!--/ End HTML Structure -->
 
-
-
-
-
-
-
 		<!-- Installation -->
 		<section id="installation">
 			<div class="page-header text-center inverse"><h3>تصميم قاعدة البيانات</h3><hr class="notop"></div>
@@ -93,7 +81,6 @@
 							<th scope="col">جوال</th>
 							<th scope="col">البريد الالكتروني</th>
 							<th scope="col">العمليات</th>
-
 						</tr>
 						</thead>
 						<tbody>
@@ -105,14 +92,11 @@
 							<td>integer=10</td>
 							<td>text->unique</td>
 							<td>العمليات عرض وتعديل وحذف</td>
-							
 						</tr>
-						
 						</tbody>
 					</table>
 			</section>
 			<section>
-					
 					<p class="text-center">جدول العملاء عند عرض البيانات </p>
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
@@ -137,17 +121,13 @@
 
 							<th scope="col">مكان العمل</th>
 							<th scope="col">هاتف العمل</th>
-							
 						</tr>
 						</thead>
 						<tbody>
 						<tr>
 							<th scope="row">نص text</th>
 							<td>بطاقة هوية مدنية ,جواز السفر دفتر العائلة من نوع select</td>
-							<td>integer=10</td>
-							
-							
-
+							<td>integer=10</td>	
 							<td>نص text</td>
 							<td>integer date</td>
 							<td>text->unique</td>
@@ -155,10 +135,8 @@
 							<td>نص text</td>
 							<td>integer=10</td>
 							<td>نص text</td>
-
 							<td>نص text</td>
 							<td>integer=12</td>
-
 						</tr>
 					</tbody>
 				</table>

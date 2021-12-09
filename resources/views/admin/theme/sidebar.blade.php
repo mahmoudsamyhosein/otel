@@ -118,7 +118,9 @@
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
+            @auth
                 <a class="nav-link" href="{{ route('sms')}}">
+            @endauth
                     <i class="fas fa-fw fa-table"></i>
                     <span>الرسائل</span></a>
             </li>
