@@ -64,11 +64,60 @@
                         </li>
                     </ul>
                 <!-- Topbar Navbar -->
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">الدفع الالكتروني</span>
+                            
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            
+                            
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                               الدفع الالكتروني
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                               سجل الطلبات
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            <!-- Topbar Navbar -->
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <div class="topbar-divider d-none d-sm-block"></div>
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">التنبيهات</span>
+                        
+                    </a>
+                    
+                </li>
+            </ul>
+        <!-- Topbar Navbar -->
             <!-- Sidebar Toggle (Topbar) -->
         <!-- Large modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">أسعار الرسائل</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">المنصة الوطنية للرصد السياحي
         </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal">الأعدادات</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal">شموس
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal">english
+        </button>
+        
 
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">

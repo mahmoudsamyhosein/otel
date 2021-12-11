@@ -50,7 +50,7 @@
                        
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('bookings.index')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الحجوزات</span></a>
             </li>
@@ -119,7 +119,7 @@
              <!-- Nav Item - Tables -->
              <li class="nav-item">
             @auth
-                <a class="nav-link" href="{{ route('sms')}}">
+                <a class="nav-link" href="{{ route('sms.index')}}">
             @endauth
                     <i class="fas fa-fw fa-table"></i>
                     <span>الرسائل</span></a>

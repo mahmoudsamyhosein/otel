@@ -121,18 +121,22 @@
                                                                         <select id="guest_type" name="guest_type"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
                                                                         @php $formhandler = include(resource_path('countries/countries.php')); @endphp
-                                                                            @foreach ($formhandler['client_type'] as $client_type => $value)
-                                                                                <option value="{{$client_type}}">{{$value}} </option>
+                                                                        @if(isset($formhandler['client_type']))
+                                                                            @foreach ($formhandler['client_type'] as $client_type => $value_1)
+                                                                                <option value="{{$client_type}}"> {{$value_1}} </option>
                                                                             @endforeach
+                                                                        @endif
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
-                                                                        <label for="approve_type">نوع الأثبات</label>
-                                                                        <select id="approve_type" name="approve_type" type='text' class="form-control">
+                                                                        <label for="guest_form_types">نوع الأثبات</label>
+                                                                        <select id="guest_form_types" name="guest_form_types" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                            @foreach ($formhandler['client_type'] as $client_type => $value)
-                                                                                <option value="{{$client_type}}">{{$value}} </option>
+                                                                        @if(isset($formhandler['guest_form_types']))
+                                                                            @foreach ($formhandler['guest_form_types'] as $guest_form_types => $value)
+                                                                                <option value="{{$guest_form_types}}">{{$value}} </option>
                                                                             @endforeach
+                                                                        @endif
                                                                         </select>
                                                                     </div>
 
@@ -153,30 +157,33 @@
                                                                         <label for="category">التصنيف</label>
                                                                         <select id="category" name="category" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                            @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                        @if(isset($formhandler['categories']))
                                                                             @foreach ($formhandler['categories'] as $categories => $value)
                                                                                 <option value="{{$categories}}">{{$value}} </option>
                                                                             @endforeach
+                                                                        @endif
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="nationalty">الجنسية</label>
                                                                         <select id="nationalty" name="nationalty"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                            @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                        @if(isset($formhandler['nationalty']))
                                                                             @foreach ($formhandler['nationalty'] as $nationalty => $value)
                                                                                 <option value="{{$nationalty}}">{{$value}} </option>
                                                                             @endforeach
+                                                                        @endif
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="kind">الجنس</label>
                                                                         <select id="kind" name='kind' type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                            @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                                        @if(isset($formhandler['kind']))
                                                                             @foreach ($formhandler['kind'] as $kind => $value)
                                                                                 <option value="{{$kind}}">{{$value}} </option>
                                                                             @endforeach
+                                                                        @endif
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
@@ -307,7 +314,7 @@
                     {{-- programedbyMSHM --}}                        
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel20" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel20">تعديل بيانات العميل </h5>
@@ -329,7 +336,7 @@
                                                             <label for="guest_type">نوع العميل</label>
                                                             <select id="guest_type" name="guest_type"  type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                            @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                            
                                                                 @if (isset($formhandler['client_type']))
 
                                                                     @foreach ($formhandler['client_type'] as $client_type => $value)
@@ -340,12 +347,14 @@
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-lg-2 col-md-2">
-                                                            <label for="approve_type">نوع الأثبات</label>
-                                                            <select id="approve_type" name="approve_type" type='text' class="form-control">
+                                                            <label for="guest_form_types">نوع الأثبات</label>
+                                                            <select id="guest_form_types" name="guest_form_types" type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                                @foreach ($formhandler['client_type'] as $client_type => $value)
-                                                                    <option value="{{$client_type}}">{{$value}} </option>
-                                                                @endforeach
+                                                            @if (isset($formhandler['guest_form_types']))
+                                                                    @foreach ($formhandler['guest_form_types'] as $guest_form_types => $value)
+                                                                        <option value="{{$guest_form_types}}">{{$value}} </option>
+                                                                    @endforeach
+                                                            @endif
                                                             </select>
                                                         </div>
 
@@ -367,10 +376,11 @@
                                                             <label for="category">التصنيف</label>
                                                             <select id="category" name="category" type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                                @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                            @if (isset($formhandler['categories']))
                                                                 @foreach ($formhandler['categories'] as $categories => $value)
                                                                     <option value="{{$categories}}">{{$value}} </option>
                                                                 @endforeach
+                                                            @endif
                                                             </select>
                                                         </div>
                                                         
@@ -380,10 +390,11 @@
                                                             <label for="nationalty">الجنسية</label>
                                                             <select id="nationalty" name="nationalty"  type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                                @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                            @if(isset($formhandler['nationalty']))
                                                                 @foreach ($formhandler['nationalty'] as $nationalty => $value)
                                                                     <option value="{{$nationalty}}">{{$value}} </option>
                                                                 @endforeach
+                                                            @endif
                                                             </select>
                                                         </div>
 
@@ -391,10 +402,11 @@
                                                             <label for="kind">الجنس</label>
                                                             <select id="kind" name='kind' type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                                @php $formhandler = include(resource_path('countries/countries.php')); @endphp
+                                                            @if(isset($formhandler['kind']))
                                                                 @foreach ($formhandler['kind'] as $kind => $value)
                                                                     <option value="{{$kind}}">{{$value}} </option>
                                                                 @endforeach
+                                                            @endif
                                                             </select>
                                                         </div>
 
@@ -487,5 +499,19 @@
 @include('admin/theme/js')
 
 </body>
-
+<script>
+    $(document).ready(function(){
+        $("select").change(function(){
+            $(this).find("option:selected").each(function(){
+                var optionValue = $(this).attr("value");
+                if(optionValue){
+                    $("value="{{$client_type}}"").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                } else{
+                    $("value="{{$client_type}}"").hide();
+                }
+            });
+        }).change();
+    });
+</script>
 </html>
