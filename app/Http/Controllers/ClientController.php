@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+  
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,9 +24,12 @@ class ClientController extends Controller
     public function index()
     {
         $allclients = Guest::latest()->paginate(10);
-
-        return view('admin/clients/index',compact('allclients'));
         
+        $datahandler = include(resource_path('formhandler/data.php'));
+
+
+
+        return view('admin/clients/index',compact('allclients','datahandler'));
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Category;
 use App\Models\Booking;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Database\Factories\GuestFactory;
@@ -37,7 +37,11 @@ class Guest extends Model
 
     public function booking(){
 
-        return $this->hasMany('App\booking');
+        return $this->hasMany('App\Models\booking');
+    }
+    public function category(){
+
+        return $this->belongsTo('App\Models\Category');
     }
 
     

@@ -21,7 +21,7 @@ class GuestSeeder extends Seeder
             'approve_type'              => 'بطاقه هوية مدنية' ,
             'place_of_issue'            => 'الرياض' ,
             'date_of_birth'             => Carbon::create('2021', '01', '01'),
-            'email'                     => 'test2gmail.com' ,
+            'email'                     => 'test@gmail.com' ,
             'phone_of_work'             => '1234567890' ,
             'category'                  => 'عميل ذهبي' ,
             'nationalty'                => 'مصري' ,

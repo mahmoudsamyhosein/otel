@@ -120,23 +120,20 @@
                                                                         <label for="guest_type">نوع العميل</label>
                                                                         <select id="guest_type" name="guest_type"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @php $formhandler = include(resource_path('countries/countries.php')); @endphp
-                                                                        @if(isset($formhandler['client_type']))
-                                                                            @foreach ($formhandler['client_type'] as $client_type => $value_1)
-                                                                                <option value="{{$client_type}}"> {{$value_1}} </option>
-                                                                            @endforeach
-                                                                        @endif
+                                                                                @foreach ($datahandler['client_type'] as $client_type => $value)
+                                                                                    <option>{{ $value }}</option>
+                                                                                @endforeach
+                                                                            
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="guest_form_types">نوع الأثبات</label>
-                                                                        <select id="guest_form_types" name="guest_form_types" type='text' class="form-control">
+                                                                        <select id="guest_form_types" name="approve_type" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['guest_form_types']))
-                                                                            @foreach ($formhandler['guest_form_types'] as $guest_form_types => $value)
-                                                                                <option value="{{$guest_form_types}}">{{$value}} </option>
+                                                                            @foreach ($datahandler['guest_form_types'] as $guest_form_types => $value)
+                                                                                <option>{{$value}}</option>
                                                                             @endforeach
-                                                                        @endif
+                                                                      
                                                                         </select>
                                                                     </div>
 
@@ -157,9 +154,9 @@
                                                                         <label for="category">التصنيف</label>
                                                                         <select id="category" name="category" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['categories']))
-                                                                            @foreach ($formhandler['categories'] as $categories => $value)
-                                                                                <option value="{{$categories}}">{{$value}} </option>
+                                                                        @if(isset($datahandler['categories']))
+                                                                            @foreach ($datahandler['categories'] as $categories => $value)
+                                                                                <option>{{$value}} </option>
                                                                             @endforeach
                                                                         @endif
                                                                         </select>
@@ -168,9 +165,9 @@
                                                                         <label for="nationalty">الجنسية</label>
                                                                         <select id="nationalty" name="nationalty"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['nationalty']))
-                                                                            @foreach ($formhandler['nationalty'] as $nationalty => $value)
-                                                                                <option value="{{$nationalty}}">{{$value}} </option>
+                                                                        @if(isset($datahandler['nationalty']))
+                                                                            @foreach ($datahandler['nationalty'] as $nationalty => $value)
+                                                                                <option>{{$value}} </option>
                                                                             @endforeach
                                                                         @endif
                                                                         </select>
@@ -179,9 +176,9 @@
                                                                         <label for="kind">الجنس</label>
                                                                         <select id="kind" name='kind' type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['kind']))
-                                                                            @foreach ($formhandler['kind'] as $kind => $value)
-                                                                                <option value="{{$kind}}">{{$value}} </option>
+                                                                        @if(isset($datahandler['kind']))
+                                                                            @foreach ($datahandler['kind'] as $kind => $value)
+                                                                                <option>{{$value}} </option>
                                                                             @endforeach
                                                                         @endif
                                                                         </select>
@@ -204,7 +201,7 @@
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="date_of_expiry">تاريخ الأنتهاء</label>
-                                                                        <input type="text" name='date_of_expiry' class="form-control" id="date_of_expiry">
+                                                                        <input type="text"  id='datetimepicker1' name='date_of_expiry' class="form-control" id="date_of_expiry">
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="phone_of_work">هاتف العمل</label>
@@ -212,7 +209,7 @@
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="date_of_birth">تاريخ الميلاد</label>
-                                                                        <input type="text" name='date_of_birth' class="form-control" id="date_of_birth" >
+                                                                        <input type="text" id='datenew' name='date_of_birth' class="form-control" id="date_of_birth" >
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="exampleFormControlTextarea1">العنوان </label>
@@ -311,7 +308,7 @@
                                 </div>
                         </div>
                     <!-- نهاية عرض  بيانات العملاء -->
-                    {{-- programedbyMSHM --}}                        
+                     {{-- programedbyMSHM                         --}}
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel20" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
@@ -337,24 +334,20 @@
                                                             <select id="guest_type" name="guest_type"  type='text' class="form-control">
                                                             <option selected>...أختر</option>
                                                             
-                                                                @if (isset($formhandler['client_type']))
 
-                                                                    @foreach ($formhandler['client_type'] as $client_type => $value)
-                                                                        <option value="{{$client_type}}">{{$value}} </option>
+                                                                    @foreach ($datahandler['client_type'] as $client_type => $value)
+                                                                        <option >{{$value}} </option>
                                                                     @endforeach
                                                                     
-                                                                @endif
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-lg-2 col-md-2">
                                                             <label for="guest_form_types">نوع الأثبات</label>
-                                                            <select id="guest_form_types" name="guest_form_types" type='text' class="form-control">
+                                                            <select id="guest_form_types" name="approve_type" type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                            @if (isset($formhandler['guest_form_types']))
-                                                                    @foreach ($formhandler['guest_form_types'] as $guest_form_types => $value)
-                                                                        <option value="{{$guest_form_types}}">{{$value}} </option>
+                                                                    @foreach ($datahandler['guest_form_types'] as $guest_form_types => $value)
+                                                                        <option>{{$value}} </option>
                                                                     @endforeach
-                                                            @endif
                                                             </select>
                                                         </div>
 
@@ -376,11 +369,9 @@
                                                             <label for="category">التصنيف</label>
                                                             <select id="category" name="category" type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                            @if (isset($formhandler['categories']))
-                                                                @foreach ($formhandler['categories'] as $categories => $value)
-                                                                    <option value="{{$categories}}">{{$value}} </option>
+                                                                @foreach ($datahandler['categories'] as $categories => $value)
+                                                                    <option >{{$value}} </option>
                                                                 @endforeach
-                                                            @endif
                                                             </select>
                                                         </div>
                                                         
@@ -390,11 +381,10 @@
                                                             <label for="nationalty">الجنسية</label>
                                                             <select id="nationalty" name="nationalty"  type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                            @if(isset($formhandler['nationalty']))
-                                                                @foreach ($formhandler['nationalty'] as $nationalty => $value)
-                                                                    <option value="{{$nationalty}}">{{$value}} </option>
+                                                                @foreach ($datahandler['nationalty'] as $nationalty => $value)
+                                                                    <option >{{$value}} </option>
                                                                 @endforeach
-                                                            @endif
+                                                            
                                                             </select>
                                                         </div>
 
@@ -402,11 +392,9 @@
                                                             <label for="kind">الجنس</label>
                                                             <select id="kind" name='kind' type='text' class="form-control">
                                                             <option selected>...أختر</option>
-                                                            @if(isset($formhandler['kind']))
-                                                                @foreach ($formhandler['kind'] as $kind => $value)
-                                                                    <option value="{{$kind}}">{{$value}} </option>
+                                                                @foreach ($datahandler['kind'] as $kind => $value)
+                                                                    <option>{{$value}} </option>
                                                                 @endforeach
-                                                            @endif
                                                             </select>
                                                         </div>
 
@@ -433,7 +421,7 @@
                                                         </div>
                                                         <div class="form-group col-lg-2 col-md-2">
                                                             <label for="date_of_expiry">تاريخ الأنتهاء</label>
-                                                            <input type="text" value='{{ $allclient->date_of_expiry }}' name='date_of_expiry' class="form-control" id="date_of_expiry">
+                                                            <input type="text"  id='datetimepicker5' value='{{ $allclient->date_of_expiry }}' name='date_of_expiry' class="form-control" id="date_of_expiry">
                                                         </div>
 
 
@@ -444,7 +432,8 @@
 
                                                         <div class="form-group col-lg-2 col-md-2">
                                                             <label for="date_of_birth">تاريخ الميلاد</label>
-                                                            <input type="text" value='{{ $allclient->date_of_birth }}' name='date_of_birth' class="form-control" id="date_of_birth" >
+                                                            <input type="text" id='datetimepicker4' value='{{ $allclient->date_of_birth }}' name='date_of_birth' class="form-control" id="date_of_birth" >
+                                                            
                                                         </div>
                                                         
 
@@ -474,10 +463,11 @@
                                                 <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
                                         </div>
                                     </form>
+                                    
                             </div>
                             </div>
                         </div>
-    </div>
+                        
 <!-- End of Main Content -->
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
@@ -497,21 +487,26 @@
 <i class="fas fa-angle-up"></i>
 </a>
 @include('admin/theme/js')
-
-</body>
-<script>
-    $(document).ready(function(){
-        $("select").change(function(){
-            $(this).find("option:selected").each(function(){
-                var optionValue = $(this).attr("value");
-                if(optionValue){
-                    $("value="{{$client_type}}"").not("." + optionValue).hide();
-                    $("." + optionValue).show();
-                } else{
-                    $("value="{{$client_type}}"").hide();
-                }
-            });
-        }).change();
+{{-- <script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datepicker({
+            locale: 'en'
+           
+        });
+        $('#datenew').datepicker({
+            locale: 'en'
+           
+        }); 
+        $('#datetimepicker5').datepicker({
+            locale: 'en'
+           
+        }); 
+        $('#datetimepicker4').datepicker({
+            locale: 'en'
+           
+        });  
     });
-</script>
+ </script> --}}
+</body>
+
 </html>

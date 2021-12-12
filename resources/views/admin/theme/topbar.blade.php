@@ -109,13 +109,13 @@
         <!-- Topbar Navbar -->
             <!-- Sidebar Toggle (Topbar) -->
         <!-- Large modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">أسعار الرسائل</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">المنصة الوطنية للرصد السياحي
+        <button type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg">أسعار الرسائل</button>
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">المنصة الوطنية للرصد السياحي
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal">الأعدادات</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal">شموس
+        <button type="button" class="btn " data-toggle="modal" ><a href="{{ route('configration')}}">الأعدادات</a></button>
+        <button type="button" class="btn" data-toggle="modal">شموس
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal">english
+        <button type="button" class="btn" data-toggle="modal">english
         </button>
         
 

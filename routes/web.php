@@ -4,30 +4,12 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ClientController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| --------------------------بسم الله الرحمن الرحيم--------------
-| -------------------------- الموجهات -------------
-|
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Auth::routes();
-/*
-____________________________________front-end_________________________________________________________________
-*/
-//رئيسية الموقع
+
 
 Route::get('/', function () {
     return view('front-end-theme/index');
 });
-
 
 Route::get('front-end-theme/index', [App\Http\Controllers\HomeController::class, 'show'])->name('index');
 
@@ -39,23 +21,10 @@ Route::get('front-end-theme/index', [App\Http\Controllers\HomeController::class,
 
 Route::post('front-end-theme/index', [App\Http\Controllers\HomeController::class, 'form_store_1'])->name('index');
 
-
-
-
-
-/*
-____________________________________control_panel_________________________________________________________________
-*/
-
-
-
 Route::get('admin/controlpanel', [App\Http\Controllers\ControlPanel_Controller::class, 'show'])->name('controlpanel');
 Route::get('admin/doc_mshm', [App\Http\Controllers\docController::class, 'index'])->name('doc_mshm');
 Route::get('admin/theme/dashboard', [App\Http\Controllers\Dashboard_Controller::class, 'index'])->name('dashboard');
-
-
-
-
+Route::get('admin/config/index', [App\Http\Controllers\ControlPanel_Controller::class, 'configration'])->name('configration');
 
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
@@ -67,9 +36,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             Route::get('/', 'Sms_Controller@index')->name('sms.index');     
     });
 });
-
-
-
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
     /**
@@ -85,8 +51,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             Route::delete('/{guest}/delete', 'ClientController@destroy')->name('clients.destroy');
     });
 });
-
-
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     /**
@@ -103,6 +67,23 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     });
 });
 
+
+
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{   
+    /**
+    * category Routes
+    */
+    Route::group(['prefix' => 'categories'], function() {
+            Route::get('/', 'CategoryController@index')->name('categories.index');
+            Route::get('/create', 'CategoryController@create')->name('categories.create');
+            Route::post('/create', 'CategoryController@store')->name('categories.store');
+            Route::get('/{category}/show', 'CategoryController@show')->name('categories.show');
+            Route::get('/{category}/edit', 'CategoryController@edit')->name('categories.edit');
+            Route::patch('/{category}/update', 'CategoryController@update')->name('categories.update');
+            Route::delete('/{category}/delete', 'CategoryController@destroy')->name('categories.destroy');
+    });
+});
 
 
 

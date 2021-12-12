@@ -25,4 +25,10 @@ class ControlPanel_Controller extends Controller
     {
         return view('admin/controlpanel');
     }
+
+
+    public function configration()
+    {
+        return view('admin/config/index');
+    }
 }

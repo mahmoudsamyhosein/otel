@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             BookingSeeder::class,
             GuestSeeder::class,
             SubscribeSeeder::class,
+            CategorySeeder::class,
 
         ]);
     }
