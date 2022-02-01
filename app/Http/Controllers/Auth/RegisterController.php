@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -74,6 +75,7 @@ class RegisterController extends Controller
    
         protected function create(array $data)
     {
+        Alert::success('تم تسجيلك بنجاح');
         return User::create([
             'first_name' =>           $data['first_name'],
             'last_name' =>            $data['last_name'],
@@ -86,6 +88,9 @@ class RegisterController extends Controller
             'password' => Hash::make( $data['password']),
             'password_confirm' =>     $data['password'],
         ]);
+
+
+
 
     }
         

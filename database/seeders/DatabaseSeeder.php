@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Booking;
 use App\Models\Subscribe;
+use App\Models\Category;
+use App\Models\Room;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +24,7 @@ class DatabaseSeeder extends Seeder
             GuestSeeder::class,
             SubscribeSeeder::class,
             CategorySeeder::class,
+            RoomSeeder::class,
 
         ]);
     }

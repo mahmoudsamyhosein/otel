@@ -14,8 +14,7 @@
   </div>
   <!-- End Preloader -->
   
-  <!-- Get Pro Button -->
-
+  <!--دخول النظام والتسجيل -->
       @if(route::has('login'))
         @auth
           <ul class="pro-features">
@@ -24,8 +23,8 @@
           @else 
           <ul class="pro-features">
             <a class="get-pro" href="{{ route('register')}}">سجل الأن</a>
-        </ul>
+          </ul>
         @endauth
-        
       @endif
+  <!--النهاية-->
   

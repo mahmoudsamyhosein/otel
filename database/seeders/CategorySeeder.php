@@ -14,11 +14,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'category_id'              =>     mt_rand(0,12),
-            'eng_name'         =>     Str::random(15),
-            'ar_name'          =>     Str::random(15),
-            'discount'         =>     mt_rand(0,12),
+        DB::table('categories')->insert([
+            
+                'category_id'      =>     mt_rand(0,12),
+                'eng_name'         =>     Str::random(15),
+                'ar_name'          =>     Str::random(15),
+                'discount'         =>     mt_rand(0,12),
         ]);
     }
 }

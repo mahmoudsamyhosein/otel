@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Guest;
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ClientController extends Controller
 {
@@ -39,7 +39,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+       
+            return view('clients.create');
 
     }
 
@@ -74,7 +75,6 @@ class ClientController extends Controller
 
         $new_guest->save();
 
-        session()->flash('flash_message', 'تمت أضافة العميل بنجاح');
         
         return redirect()->route('clients.index');
     }
@@ -137,7 +137,6 @@ class ClientController extends Controller
 
         $guest->save();
 
-        session()->flash('flash_message', 'تم نعديل العميل بنجاح');
         return redirect(route('clients.index'));
     }
 
@@ -151,7 +150,7 @@ class ClientController extends Controller
     {
         $guest->delete();
 
-        return redirect()->route('clients.index')
-            ->withSuccess('تم الحذف بنجاح');
+        return redirect()->route('clients.index');
+        
     }
 }

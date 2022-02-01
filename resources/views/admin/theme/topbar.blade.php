@@ -1,5 +1,5 @@
     <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" dir="rtl">
             <!-- Sidebar Toggle (Topbar) -->
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
@@ -63,8 +63,8 @@
                             </div>
                         </li>
                     </ul>
-                <!-- Topbar Navbar -->
-                <!-- Topbar Navbar -->
+                <!-- Topbar Navbar --> 
+                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <!-- Nav Item - User Information -->
@@ -92,8 +92,8 @@
                         </div>
                     </li>
                 </ul>
-            <!-- Topbar Navbar -->
-            <!-- Topbar Navbar -->
+ <!-- Topbar Navbar -->
+    <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <!-- Nav Item - User Information -->
@@ -108,18 +108,18 @@
             </ul>
         <!-- Topbar Navbar -->
             <!-- Sidebar Toggle (Topbar) -->
-        <!-- Large modal -->
+        <!-- Large modal --> 
         <button type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg">أسعار الرسائل</button>
         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">المنصة الوطنية للرصد السياحي
         </button>
         <button type="button" class="btn " data-toggle="modal" ><a href="{{ route('configration')}}">الأعدادات</a></button>
-        <button type="button" class="btn" data-toggle="modal">شموس
+         <button type="button" class="btn" data-toggle="modal">شموس
         </button>
         <button type="button" class="btn" data-toggle="modal">english
         </button>
         
 
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -211,7 +211,7 @@
                         <span class="text-center text-danger">ملاحظة هامة
                             اذا تم ايداع المبلغ بعد الرابعة عصرا فان شحن الرسائل سيكون في اليوم التالي</span>
                 </div>
-            </div>
+            </div> 
 
         </div>  
             <!-- Modal -->
@@ -237,7 +237,7 @@
                 </div>
                 </div>
             </div>
-                                                                
+                                                            
                 
 </nav>
 <!-- End of Topbar -->

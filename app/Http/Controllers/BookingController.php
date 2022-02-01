@@ -22,8 +22,10 @@ class BookingController extends Controller
     public function index()
     {
         $allbookings = Booking::latest()->paginate(10);
+        $datahandler = include(resource_path('formhandler/data.php'));
 
-        return view('admin/bookings/index',compact('allbookings'));
+
+        return view('admin/bookings/index',compact('allbookings','datahandler'));
         
     }
 

@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $fillable=[
 
-     
+            'category_id',
             'eng_name',
             'ar_name',
             'discount',

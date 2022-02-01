@@ -138,7 +138,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input name='password_confirm' class="form-control @error ('password_confirm') is-invaild @enderror" id="password_confirm" type="password" placeholder="{{__('radix.Confirm password')}}" required />
-                                                        {{-- <label for="password">{{__('radix.Confirm Password')}}</label> --}}
+                                                        <label for="password">{{__('radix.Confirm Password')}}</label>
                                                         @error('password_confirm')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>

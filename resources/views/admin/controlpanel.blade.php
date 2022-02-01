@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <title>أوتيل | لادارة الفنادق</title>
     @include('admin/theme/css')
+    @include('sweetalert::alert')
 </head>
 <body id="page-top" dir="rtl">
     @auth

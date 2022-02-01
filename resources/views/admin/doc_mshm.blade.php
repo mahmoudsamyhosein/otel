@@ -265,6 +265,66 @@
 				</table>
 			</section>
 		
+			<section>
+
+				<div class="page-header text-center"><h3>المتبقي للانتهاء من الموقع </h3><hr class="notop"></div>
+				<p class="text-center">الاعدادات</p>
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary"></h6>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive dir="rtl"></div>
+						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+					<tr>
+
+						<th scope="col">رقم العقد</th>
+						<th scope="col">حالة الحجز</th>
+						<th scope="col">الشقة</th>
+						<th scope="col">نوع الشقة</th>
+						<th scope="col">العميل</th>
+
+						<th scope="col">نوع الحجز</th>
+						<th scope="col">الدخول في</th>
+						<th scope="col">الخروج في</th>
+						<th scope="col">المدة</th>
+						<th scope="col">الايجار	</th>
+
+						<th scope="col">المبلغ</th>
+						<th scope="col">الضرائب	</th>
+						<th scope="col">الاجمالي</th>
+						<th scope="col">التأمينات</th>
+						<th scope="col">المدفوع	</th>
+						<th scope="col">الرصيد</th>
+						<th scope="col">العمليات</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row"> integer يعرض رابط العقد</th>
+						<td>نص text</td>
+						<td>بطاقة هوية مدنية ,جواز السفر دفتر العائلة من نوع select</td>
+						<td>نص text</td>
+						<td>integer date</td>
+
+						<td>text->unique</td>
+						<td>integer=12</td>
+						<td>نص text</td>
+						<td>نص text</td>
+						<td>integer=1to30</td>
+
+						<td>text-date</td>
+						<td>نص text غيرمعروف , ذكر ,أنثي</td>
+						<td>integer=10</td>
+						<td>text</td>
+						<td>نص text</td>
+						<td>نص text</td>
+						<td>نص text</td>
+					</tr>
+					</tbody>
+				</table>
+			</section>
 		</section>
 		<!-- End Installation -->
 		<!-- CSS Structure -->
@@ -312,13 +372,6 @@
 				</table>
 		</section>
 		<!-- End Javascript	-->
-
-
-
-
-
-
-
 		<!-- Icons	-->
 		<section id="icons">
 			<div class="page-header"><h3></h3><hr class="notop"></div>
@@ -347,23 +400,6 @@
 		<section id="support">
 		</section>
 		<!--/ End Support --> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</div>
 	<script src="{{ asset('doc/assets/js/jquery.js') }}"></script>
 	<script src="{{ asset('doc/assets/js/jquery.scrollTo.js') }}"></script>

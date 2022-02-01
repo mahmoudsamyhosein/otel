@@ -8,14 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Bootstrap Date-Picker Plugin -->
-<!--  jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <title>   أوتيل  لادارة الفنادق | العملاء </title>
     @include('admin/theme/css')
 </head>
@@ -44,12 +36,13 @@
                 {{-- بيانات العملاء --}}
                 <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered"  name='guestsTable' id="guestsTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered"  width="100%" cellspacing="0">
                                     <thead>
                                         <tr  class="table-info text-center">
                                             <th>رقم</th>
-                                            <th> الاسم بالعربية</th>
                                             <th>الأسم بالأنجليزية</th>
+                                            <th>الاسم بالعربية</th>
+                                            
                                             <th>الخصم</th>
                                             <th>العمليات</th>
                                         </tr>
@@ -75,8 +68,8 @@
                                     <tfoot>
                                         <tr class="text-center table-info">
                                             <th>رقم</th>
-                                            <th> الاسم بالعربية</th>
                                             <th>الأسم بالأنجليزية</th>
+                                            <th> الاسم بالعربية</th>
                                             <th>الخصم</th>
                                             <th>العمليات</th>
                                         </tr>
@@ -91,7 +84,7 @@
             </div>
                         <!-- بداية أضافة بيانات العملاء -->
                         <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle5" aria-hidden="true">
-                            <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalCenterTitle5">أضافة تصنيف جديد</h5>
@@ -100,7 +93,7 @@
                                             </button>
                                     </div>
                                         <div class="modal-body">
-                                                    <form class="form" method="POST" action="{{ route('categories.create',$allcatgory->id ) }} " enctype="multipart/form-data" >
+                                                    <form class="form" method="POST" action="{{ route('categories.create',$allcatgory->category_id ) }} " enctype="multipart/form-data" >
                                                         @csrf
                                                             <div class="form-row">
                                                                     <div class="form-group col-lg-2 col-md-2">
@@ -120,7 +113,7 @@
 
                                                                     
                                                             </div>
-                                                        <button type="submit" class="btn btn-primary">أرسال</button>
+                                                        <button type="submit" class="btn btn-primary">أضافة</button>
                                                     </form>
                                         </div>
                                 </div>
@@ -177,7 +170,7 @@
                      {{-- programedbyMSHM                         --}}
                          <!-- Modal -->
                         <div class="modal fade" id="exampleModal20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel20" aria-hidden="true">
-                            <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel20">تعديل التصنيف</h5>
@@ -192,17 +185,17 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="eng_name"><span>الأسم بالأنجليزية</span> </label>
-                                                        <input type="text"  name='eng_name' class="form-control" id="eng_name" >
+                                                        <input type="text"  name='eng_name' class="form-control" id="eng_name" value="{{ $allcatgory->eng_name}}" >
                                                     </div>
 
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="ar_name"><span>الأسم بالعربية</span> </label>
-                                                        <input type="text"  name='ar_name' class="form-control" id="ar_name" >
+                                                        <input type="text"  name='ar_name' class="form-control" id="ar_name"  value="{{$allcatgory->ar_name}}">
                                                     </div>
 
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="discount"><span>الخصم</span> </label>
-                                                        <input type="text"  name='discount' class="form-control" id="discount" >
+                                                        <input type="text"  name='discount' class="form-control" id="discount" value="{{$allcatgory->discount}}" >
                                                     </div>                                 
                                                 </div>
                                             </div>

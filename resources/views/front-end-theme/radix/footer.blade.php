@@ -12,8 +12,8 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- About Widget -->
                             <div class="single-widget about text-right">
-                                <h2 >عنوان مكتبنا</h2>
-                                <p>جدة المملكة العربية السعودية</p>
+                                <h2>   </h2>
+                                <p> </p>
                                 <ul class="list">
                                     <li><i class="fa fa-map-marker"></i>العنوان: جدة المملكة العربية السعودية</li>
                                     <li><i class="fa fa-headphones"></i>هاتف : +966555555</li>
@@ -60,8 +60,8 @@
                             <!-- Newsletter Widget -->
                             <div class="single-widget newsletter text-right">
                                 <h2>{{ __('radix.Newsletter') }} </h2>
-                                <p>أشترك في القائمة البريدية لتصلك أحدث العروض وخصم حصري علي الأشتراكات</p>
-                                <form action="{{route('index')}}" method="POST">
+                                <p  >أشترك في القائمة البريدية لتصلك أحدث العروض وخصم حصري علي الأشتراكات</p>
+                                <form action="{{ route('subscribe.create') }}" method="POST">
                                   @csrf
                                     <input placeholder="{{__('radix.Your_Name') }}" type="text" name="name">
                                     <input placeholder="{{__('radix.your_email') }}" type="email" name="email">

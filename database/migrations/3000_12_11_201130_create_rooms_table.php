@@ -15,6 +15,18 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('flat_number_in_shomos');
+            $table->string('level_name');
+            $table->integer('rooms_count');
+            $table->integer('bathroom_count');
+            $table->integer('single_bed_count');
+            $table->integer('double_bed_count');
+            $table->integer('closit_count');
+            $table->integer('tvs_count');
+            $table->string('conditioner_type');
+            $table->string('flat_kind');
+            $table->string('note');
             $table->timestamps();
         });
     }

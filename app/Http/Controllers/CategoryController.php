@@ -35,7 +35,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('catgories.create');
+        return view('categories.create');
 
     }
 
@@ -57,7 +57,7 @@ class CategoryController extends Controller
         $category->save();
 
         
-        return redirect()->route('catgories.index');
+        return redirect()->route('categories.index');
     }
 
     /**

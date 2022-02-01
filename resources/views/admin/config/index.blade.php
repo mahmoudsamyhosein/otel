@@ -1,6 +1,6 @@
 {{-- بسم الله الرحمن الرحيم --}}
 <!DOCTYPE html>
-<html lang="ar">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Bootstrap Date-Picker Plugin -->
-<!--  jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <title>   أوتيل  لادارة الفنادق | العملاء </title>
     @include('admin/theme/css')
 </head>
@@ -40,17 +32,17 @@
         </div>
         <!-- Color System -->
         <div class="row text-center" >
-            <div class="col-lg-6 mb-4 ">
+            {{-- <div class="col-lg-6 mb-4 ">
                 <div class="card bg-primary text-white shadow">
                     <div class="card-body">
-                        أعدادات أسعار الشقق
+                        <a href="">أعدادات أسعار الشقق</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card bg-success text-white shadow">
                     <div class="card-body">
-                        أدارة المستخدمين
+                       <a href=""> أدارة المستخدمين</a>
                         
                     </div>
                 </div>
@@ -58,47 +50,46 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-info text-white shadow">
                     <div class="card-body">
-                        أعدادات الرسائل
+                       <a href="">أعدادات الرسائل</a> 
                         
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-lg-6 mb-4">
                 <div class="card bg-warning text-white shadow">
                     <div class="card-body">
-                        اعدادات أوقات الذروة
-                        
+                        <a href="{{ route('Rush_Hours.index') }}">اعدادات أوقات الذروة</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 mb-4">
+            {{-- <div class="col-lg-6 mb-4">
                 <div class="card bg-danger text-white shadow">
                     <div class="card-body">
-                        اعدادات الحجوزات
                         
+                     <a href="">اعدادات الحجوزات</a>   
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card bg-secondary text-white shadow">
                     <div class="card-body">
-                        اعدادات بيانات الشركة
-                        
+                       
+                        <a href=""> اعدادات بيانات الشركة</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card bg-light text-black shadow">
                     <div class="card-body">
-                        اعدادات شروط التعاقد
                         
+                      <a href="">اعدادات شروط التعاقد</a>  
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card bg-dark text-white shadow">
                     <div class="card-body">
-                        اعدادات بنود الصرف
+                    <a href="">اعدادات بنود الصرف</a>
                         
                     </div>
                 </div>
@@ -106,7 +97,7 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-primary text-white shadow">
                     <div class="card-body">
-                        الحسابات
+                        <a href="">الحسابات</a>
                         
                     </div>
                 </div>
@@ -114,7 +105,7 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-success text-white shadow">
                     <div class="card-body">
-                        أدارة الخدمات
+                        <a href="">أدارة الخدمات</a>
                         
                     </div>
                 </div>
@@ -122,11 +113,11 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-info text-white shadow">
                     <div class="card-body">
-                        الأسماء في شموس
+                        <a href="">الأسماء في شموس</a>
                         
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-lg-6 mb-4">
                 <div class="card bg-warning text-white shadow">
                     <div class="card-body">
@@ -135,10 +126,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 mb-4">
+            {{-- <div class="col-lg-6 mb-4">
                 <div class="card bg-danger text-white shadow">
                     <div class="card-body">
-                        أدارة الضرائب والرسوم
+                        <a href="">أدارة الضرائب والرسوم</a>
                         
                     </div>
                 </div>
@@ -146,7 +137,7 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-secondary text-white shadow">
                     <div class="card-body">
-                        الأثاث
+                       <a href=""> الأثاث</a>
                         
                     </div>
                 </div>
@@ -154,7 +145,23 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-light text-black shadow">
                     <div class="card-body">
-                        اسعار أنواع الشقق
+                      <a href="">اسعار أنواع الشقق</a>
+                        
+                    </div>
+                </div>
+            </div> --}}
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-dark text-white shadow">
+                    <div class="card-body">
+                       <a href="{{ route('rooms.index')}}"> أعدادات الغرف</a>
+                        
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-lg-6 mb-4">
+                <div class="card bg-dark text-white shadow">
+                    <div class="card-body">
+                       <a href="">أدارة الأشتراكات</a> 
                         
                     </div>
                 </div>
@@ -162,27 +169,10 @@
             <div class="col-lg-6 mb-4">
                 <div class="card bg-dark text-white shadow">
                     <div class="card-body">
-                        أعدادات الغرف
-                        
+                       <a href=""> موظفين خدمة الغرف </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-dark text-white shadow">
-                    <div class="card-body">
-                        أدارة الأشتراكات
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-dark text-white shadow">
-                    <div class="card-body">
-                       موظفين خدمة الغرف
-                        
-                    </div>
-                </div>
-            </div>
+            </div> --}}
         </div>
            
     </div>

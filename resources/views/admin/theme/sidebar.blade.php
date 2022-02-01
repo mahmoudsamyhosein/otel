@@ -83,7 +83,7 @@
                     <span>العملاء</span></a>
             </li>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse6"
                     aria-expanded="true" aria-controls="collapse5">
@@ -114,7 +114,7 @@
                         <a class="collapse-item" href="#">مهام خدمة الغرف</a>
                     </div>
                 </div>
-            </li>
+            </li> 
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
@@ -132,11 +132,11 @@
                 <a class="nav-link" href="{{ route('doc_mshm')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>سجل الحركات</span></a>
-            </li>
+            </li> 
 
 
 
-            <!-- Nav Item - Pages Collapse Menu -->
+           <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -172,13 +172,26 @@
                     </div>
                 </div>
             </li>
-
                 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
                 <a class="nav-link" href="{{ route('doc_mshm')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>الوثائق</span></a>
+            </li>
+
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('front_end.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>الفرونت أند</span></a>
+            </li>
+             <!-- Nav Item - Tables -->
+             <li class="nav-item">
+                <a class="nav-link" href="{{ route('translation.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>الترجمة</span></a>
             </li>
 
 

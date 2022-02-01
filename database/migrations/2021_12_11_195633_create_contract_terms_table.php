@@ -12,9 +12,11 @@ class CreateContractTermsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {// شروط التعاقد
         Schema::create('contract_terms', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // اسم شرط التعاقد
+            $table->string('body'); // النص
             $table->timestamps();
         });
     }

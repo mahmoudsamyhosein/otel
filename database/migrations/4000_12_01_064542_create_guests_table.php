@@ -14,6 +14,7 @@ class CreateGuestsTable extends Migration
     public function up()
     {
         Schema::create('guests', function (Blueprint $table) {
+            
             $table->increments('id');
             $table->string('name');
             $table->string('guest_type');
@@ -32,6 +33,7 @@ class CreateGuestsTable extends Migration
             $table->string('address')->nullable();
             $table->string('note')->nullable();
             $table->string('note_2')->nullable();
+            
             $table->unsignedBigInteger("category_id")->nullable();
 
             $table->foreign('category_id')
@@ -39,6 +41,8 @@ class CreateGuestsTable extends Migration
                 ->on('categories')
                 ->onDelete('set null');
             $table->timestamps();
+
+
         });
     }
 

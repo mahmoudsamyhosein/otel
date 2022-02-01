@@ -21,7 +21,7 @@
         <!--css-->
     </head>
     <body class="antialiased" >
-        
+
         <!--radix theme -->
          @include('front-end-theme/radix/header')
          @include('front-end-theme/radix/preload-get-pro')
@@ -36,6 +36,6 @@
          @include('front-end-theme/radix/footer')
          @include('front-end-theme/radix/js')
         <!--radix theme -->
-        
+
     </body>
 </html>

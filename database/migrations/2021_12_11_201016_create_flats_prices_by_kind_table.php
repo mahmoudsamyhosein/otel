@@ -15,6 +15,9 @@ class CreateFlatsPricesByKindTable extends Migration
     {
         Schema::create('flats_prices_by_kind', function (Blueprint $table) {
             $table->id();
+            $table->string('kind_name');
+            $table->float('price');
+            $table->float('lowest_price');
             $table->timestamps();
         });
     }

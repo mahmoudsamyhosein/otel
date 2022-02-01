@@ -8,14 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Bootstrap Date-Picker Plugin -->
-<!--  jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <title>   أوتيل  لادارة الفنادق | العملاء </title>
     @include('admin/theme/css')
 </head>
@@ -146,27 +138,24 @@
                                                                         <input type="text"  name='contract_no' class="form-control" id="contract_no" >
                                                                     </div>
 
-                                                                    <div class="form-group col-lg-2 col-md-2">
+                                                                  {{-- <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="booking_status">حالة الحجز</label>
                                                                         <select id="booking_status" name="booking_status"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @php $formhandler = include(resource_path('countries/countries.php')); @endphp
-                                                                        @if(isset($formhandler['booking_status']))
-                                                                            @foreach ($formhandler['booking_status'] as $booking_status => $value_1)
-                                                                                <option value="{{$booking_status}}"> {{$value_1}} </option>
+                                                                            @foreach ($datahandler['booking_status'] as $booking_status => $value)
+                                                                                <option > {{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
                                                                         </select>
-                                                                    </div>
-                                                                    <div class="form-group col-lg-2 col-md-2">
+                                                                    </div>  
+                                                                 <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="flat">الشقة</label>
                                                                         <select id="flat" name="flat" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['flat']))
-                                                                            @foreach ($formhandler['flat'] as $flat => $value)
-                                                                                <option value="{{$flat}}">{{$value}} </option>
+                                                                        
+                                                                            @foreach ($datahandler['flat'] as $flat => $value)
+                                                                                <option >{{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
+                                                                        
                                                                         </select>
                                                                     </div>
 
@@ -187,34 +176,34 @@
                                                                         <label for="booking_kind">نوع الحجز</label>
                                                                         <select id="booking_kind" name="booking_kind" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['booking_kind']))
-                                                                            @foreach ($formhandler['booking_kind'] as $booking_kind => $value)
-                                                                                <option value="{{$booking_kind}}">{{$value}} </option>
+                                                                        
+                                                                            @foreach ($datahandler['booking_kind'] as $booking_kind => $value)
+                                                                                <option >{{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
+                                                                        
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="sign_in">الدخول في</label>
                                                                         <select id="sign_in" name="sign_in"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['sign_in']))
-                                                                            @foreach ($formhandler['sign_in'] as $sign_in => $value)
-                                                                                <option value="{{$sign_in}}">{{$value}} </option>
+                                                                        
+                                                                            @foreach ($datahandler['sign_in'] as $sign_in => $value)
+                                                                                <option>{{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
+
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="sign_out">الخروج في</label>
                                                                         <select id="sign_out" name='sign_out' type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($formhandler['sign_out']))
-                                                                            @foreach ($formhandler['sign_out'] as $sign_out => $value)
-                                                                                <option value="{{$sign_out}}">{{$value}} </option>
+                                                                        
+                                                                            @foreach ($datahandler['sign_out'] as $sign_out => $value)
+                                                                                <option >{{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
-                                                                        </select>
+                                                                        
+                                                                        </select> --}}
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="duration">المدة</label>
@@ -244,7 +233,7 @@
                                                                         <label for="paid_up">المدفوع</label>
                                                                         <input type="text" name='paid_up' class="form-control" id="paid_up" >
                                                                     </div>
-                                                                    {{-- <div class="form-group col-lg-2 col-md-2">
+                                                                    <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="exampleFormControlTextarea1">الرصيد </label>
                                                                         <textarea class="form-control" name="Balance" id="Balance" rows="3"></textarea>
                                                                     </div>
@@ -259,7 +248,7 @@
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="note_2">ملاحظات خاصة</label>
                                                                         <textarea class="form-control"  name='note_2' id="note_2" rows="3"></textarea>
-                                                                    </div> --}}
+                                                                    </div>
                                                             </div>
                                                         <button type="submit" class="btn btn-primary">أرسال</button>
                                                     </form>
@@ -363,11 +352,11 @@
                                             </div>
 
                                         </div>  
-                                </div>
+                                </div> 
                         </div>
-                    <!-- نهاية عرض  بيانات العملاء -->
-                    {{-- programedbyMSHM --}}                        
-                        <!-- Modal -->
+                    {{-- <!-- نهاية عرض  بيانات العملاء -->
+                    {{-- programedbyMSHM                         --}}
+                     <!-- Modal -->
                         <div class="modal fade" id="exampleModal20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel20" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
@@ -387,27 +376,25 @@
                                                         <input type="text"  name='contract_no' class="form-control" id="contract_no" >
                                                     </div>
 
-                                                    <div class="form-group col-lg-2 col-md-2">
+                                                    {{-- <div class="form-group col-lg-2 col-md-2">
                                                         <label for="booking_status">حالة الحجز</label>
                                                         <select id="booking_status" name="booking_status"  type='text' class="form-control">
                                                         <option selected>...أختر</option>
-                                                        @php $formhandler = include(resource_path('countries/countries.php')); @endphp
-                                                        @if(isset($formhandler['booking_status']))
-                                                            @foreach ($formhandler['booking_status'] as $booking_status => $value_1)
-                                                                <option value="{{$booking_status}}"> {{$value_1}} </option>
+                                                            @foreach ($datahandler['booking_status'] as $booking_status => $value_1)
+                                                                <option > {{$value_1}} </option>
                                                             @endforeach
-                                                        @endif
+                                                     
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="flat">الشقة</label>
                                                         <select id="flat" name="flat" type='text' class="form-control">
                                                         <option selected>...أختر</option>
-                                                        @if(isset($formhandler['flat']))
-                                                            @foreach ($formhandler['flat'] as $flat => $value)
-                                                                <option value="{{$flat}}">{{$value}} </option>
+                                                      
+                                                            @foreach ($datahandler['flat'] as $flat => $value)
+                                                                <option>{{$value}} </option>
                                                             @endforeach
-                                                        @endif
+                                                       
                                                         </select>
                                                     </div>
 
@@ -428,35 +415,35 @@
                                                         <label for="booking_kind">نوع الحجز</label>
                                                         <select id="booking_kind" name="booking_kind" type='text' class="form-control">
                                                         <option selected>...أختر</option>
-                                                        @if(isset($formhandler['booking_kind']))
-                                                            @foreach ($formhandler['booking_kind'] as $booking_kind => $value)
-                                                                <option value="{{$booking_kind}}">{{$value}} </option>
+                                         
+                                                            @foreach ($datahandler['booking_kind'] as $booking_kind => $value)
+                                                                <option >{{$value}} </option>
                                                             @endforeach
-                                                        @endif
+                                                       
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="sign_in">الدخول في</label>
                                                         <select id="sign_in" name="sign_in"  type='text' class="form-control">
                                                         <option selected>...أختر</option>
-                                                        @if(isset($formhandler['sign_in']))
-                                                            @foreach ($formhandler['sign_in'] as $sign_in => $value)
-                                                                <option value="{{$sign_in}}">{{$value}} </option>
+                                                    
+                                                            @foreach ($datahandler['sign_in'] as $sign_in => $value)
+                                                                <option >{{$value}} </option>
                                                             @endforeach
-                                                        @endif
+                                                      
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="sign_out">الخروج في</label>
                                                         <select id="sign_out" name='sign_out' type='text' class="form-control">
                                                         <option selected>...أختر</option>
-                                                        @if(isset($formhandler['sign_out']))
-                                                            @foreach ($formhandler['sign_out'] as $sign_out => $value)
-                                                                <option value="{{$sign_out}}">{{$value}} </option>
+                                                       
+                                                            @foreach ($datahandler['sign_out'] as $sign_out => $value)
+                                                                <option >{{$value}} </option>
                                                             @endforeach
-                                                        @endif
+                                                    
                                                         </select>
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="duration">المدة</label>
                                                         <input type="text" name='duration' class="form-control" id="duration" >
@@ -485,7 +472,7 @@
                                                         <label for="paid_up">المدفوع</label>
                                                         <input type="text" name='paid_up' class="form-control" id="paid_up" >
                                                     </div>
-                                                    {{-- <div class="form-group col-lg-2 col-md-2">
+                                                   <div class="form-group col-lg-2 col-md-2">
                                                         <label for="exampleFormControlTextarea1">الرصيد </label>
                                                         <textarea class="form-control" name="Balance" id="Balance" rows="3"></textarea>
                                                     </div>
@@ -500,7 +487,7 @@
                                                     <div class="form-group col-lg-2 col-md-2">
                                                         <label for="note_2">ملاحظات خاصة</label>
                                                         <textarea class="form-control"  name='note_2' id="note_2" rows="3"></textarea>
-                                                    </div> --}}                                                    
+                                                    </div>                                                   
                                                 </div>
                                             </div>
                                         <div class="modal-footer">
@@ -509,7 +496,7 @@
                                         </div>
                                     </form>
                             </div>
-                            </div>
+                            </div> 
                         </div>
     </div>
 <!-- End of Main Content -->
@@ -533,19 +520,5 @@
 @include('admin/theme/js')
 
 </body>
-<script>
-    $(document).ready(function(){
-        $("select").change(function(){
-            $(this).find("option:selected").each(function(){
-                var optionValue = $(this).attr("value");
-                if(optionValue){
-                    $("").not("." + optionValue).hide();
-                    $("." + optionValue).show();
-                } else{
-                    $("").hide();
-                }
-            });
-        }).change();
-    });
-</script>
+
 </html>

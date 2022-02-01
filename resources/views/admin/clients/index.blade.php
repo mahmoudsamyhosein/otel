@@ -8,14 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Bootstrap Date-Picker Plugin -->
-<!--  jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
     <title>   أوتيل  لادارة الفنادق | العملاء </title>
     @include('admin/theme/css')
 </head>
@@ -97,7 +90,7 @@
                             </div>
                         </div>
             </div>
-                        <!-- بداية أضافة بيانات العملاء -->
+                     <!-- بداية أضافة بيانات العملاء -->
                         <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle5" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
@@ -116,7 +109,7 @@
                                                                         <input type="text"  name='name' class="form-control" id="name" >
                                                                     </div>
 
-                                                                    <div class="form-group col-lg-2 col-md-2">
+                                                                    {{-- <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="guest_type">نوع العميل</label>
                                                                         <select id="guest_type" name="guest_type"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
@@ -154,35 +147,31 @@
                                                                         <label for="category">التصنيف</label>
                                                                         <select id="category" name="category" type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($datahandler['categories']))
-                                                                            @foreach ($datahandler['categories'] as $categories => $value)
-                                                                                <option>{{$value}} </option>
-                                                                            @endforeach
-                                                                        @endif
+
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="nationalty">الجنسية</label>
                                                                         <select id="nationalty" name="nationalty"  type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($datahandler['nationalty']))
+                                                                        
                                                                             @foreach ($datahandler['nationalty'] as $nationalty => $value)
                                                                                 <option>{{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
+                                                                        
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="kind">الجنس</label>
                                                                         <select id="kind" name='kind' type='text' class="form-control">
                                                                         <option selected>...أختر</option>
-                                                                        @if(isset($datahandler['kind']))
+                                                                        
                                                                             @foreach ($datahandler['kind'] as $kind => $value)
                                                                                 <option>{{$value}} </option>
                                                                             @endforeach
-                                                                        @endif
+                                                                        
                                                                         </select>
-                                                                    </div>
+                                                                    </div> --}}
                                                                     <div class="form-group col-lg-2 col-md-2">
                                                                         <label for="phone">رقم الجوال</label>
                                                                         <input type="text" name='phone' class="form-control" id="phone" >
@@ -229,7 +218,7 @@
                                                                     </div>
                                                             </div>
                                                         <button type="submit" class="btn btn-primary">أرسال</button>
-                                                    </form>
+                                                    </form> 
                                         </div>
                                 </div>
                         </div>
@@ -329,7 +318,7 @@
                                                             <input type="text" value="{{ $allclient->name }}" name='name' class="form-control" id="name" >
                                                         </div>
 
-                                                        <div class="form-group col-lg-2 col-md-2">
+                                                        {{-- <div class="form-group col-lg-2 col-md-2">
                                                             <label for="guest_type">نوع العميل</label>
                                                             <select id="guest_type" name="guest_type"  type='text' class="form-control">
                                                             <option selected>...أختر</option>
@@ -396,7 +385,7 @@
                                                                     <option>{{$value}} </option>
                                                                 @endforeach
                                                             </select>
-                                                        </div>
+                                                        </div> --}}
 
 
                                                         <div class="form-group col-lg-2 col-md-2">
@@ -462,7 +451,7 @@
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">أغلاق</button>
                                                 <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
                                         </div>
-                                    </form>
+                                    </form> 
                                     
                             </div>
                             </div>
@@ -487,7 +476,7 @@
 <i class="fas fa-angle-up"></i>
 </a>
 @include('admin/theme/js')
-{{-- <script type="text/javascript">
+<script type="text/javascript">
     $(function () {
         $('#datetimepicker1').datepicker({
             locale: 'en'
@@ -506,7 +495,7 @@
            
         });  
     });
- </script> --}}
+ </script>
 </body>
 
 </html>
